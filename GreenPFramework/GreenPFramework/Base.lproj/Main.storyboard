@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b5d-cZ-XHa">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="VgU-sW-3lE">
+            <objects>
+                <viewController id="b5d-cZ-XHa" customClass="ViewController" customModule="GreenPFramework" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O9U-kF-zDP">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Is3-Fc-lpf">
+                                <rect key="frame" x="253" y="142" width="110" height="30"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.4039215686" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="lhk-sz-xe2"/>
+                                </constraints>
+                                <state key="normal" title="초기화">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapRegistBtn:" destination="b5d-cZ-XHa" eventType="touchUpInside" id="d7q-8Q-v4D"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offerwall message" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDG-Aj-Uqr">
+                                <rect key="frame" x="30" y="194" width="333" height="20.333333333333343"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="myelinsoft" borderStyle="roundedRect" placeholder="User ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tDf-y0-EoU">
+                                <rect key="frame" x="30" y="140" width="203" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offerwall Sample" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsi-QQ-fNL">
+                                <rect key="frame" x="131.66666666666666" y="79" width="129.99999999999997" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ayj-qT-TZA">
+                                <rect key="frame" x="30" y="768" width="333" height="30"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.4039215686" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Show">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="show:" destination="b5d-cZ-XHa" eventType="touchUpInside" id="J6S-4k-IKu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fPD-MR-Ahj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Wsi-QQ-fNL" firstAttribute="top" secondItem="fPD-MR-Ahj" secondAttribute="top" constant="20" id="56Y-6Z-TyU"/>
+                            <constraint firstItem="Ayj-qT-TZA" firstAttribute="leading" secondItem="fPD-MR-Ahj" secondAttribute="leading" constant="30" id="7o5-yI-YdC"/>
+                            <constraint firstItem="fPD-MR-Ahj" firstAttribute="trailing" secondItem="Is3-Fc-lpf" secondAttribute="trailing" constant="30" id="8X4-dM-Mqe"/>
+                            <constraint firstItem="tDf-y0-EoU" firstAttribute="top" secondItem="Wsi-QQ-fNL" secondAttribute="bottom" constant="40" id="M4p-iV-1hq"/>
+                            <constraint firstItem="fPD-MR-Ahj" firstAttribute="trailing" secondItem="Ayj-qT-TZA" secondAttribute="trailing" constant="30" id="Qw6-uV-0p1"/>
+                            <constraint firstItem="fPD-MR-Ahj" firstAttribute="bottom" secondItem="Ayj-qT-TZA" secondAttribute="bottom" constant="20" id="UKz-IY-hT7"/>
+                            <constraint firstItem="fPD-MR-Ahj" firstAttribute="trailing" secondItem="XDG-Aj-Uqr" secondAttribute="trailing" constant="30" id="YgL-Pe-Dai"/>
+                            <constraint firstItem="XDG-Aj-Uqr" firstAttribute="leading" secondItem="fPD-MR-Ahj" secondAttribute="leading" constant="30" id="Ymt-JN-ZSB"/>
+                            <constraint firstItem="XDG-Aj-Uqr" firstAttribute="top" secondItem="tDf-y0-EoU" secondAttribute="bottom" constant="20" id="fTN-Rf-5Bw"/>
+                            <constraint firstItem="tDf-y0-EoU" firstAttribute="leading" secondItem="fPD-MR-Ahj" secondAttribute="leading" constant="30" id="kFP-GE-dUs"/>
+                            <constraint firstItem="Is3-Fc-lpf" firstAttribute="centerY" secondItem="tDf-y0-EoU" secondAttribute="centerY" id="qn3-Gf-wYY"/>
+                            <constraint firstItem="Is3-Fc-lpf" firstAttribute="leading" secondItem="tDf-y0-EoU" secondAttribute="trailing" constant="20" id="uep-Dw-shC"/>
+                            <constraint firstItem="Wsi-QQ-fNL" firstAttribute="centerX" secondItem="fPD-MR-Ahj" secondAttribute="centerX" id="vVZ-Ci-86I"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="idTextField" destination="tDf-y0-EoU" id="esV-at-IgS"/>
+                        <outlet property="resultLabel" destination="XDG-Aj-Uqr" id="vix-wS-aQ9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ehr-v6-JRp" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="367" y="64"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
