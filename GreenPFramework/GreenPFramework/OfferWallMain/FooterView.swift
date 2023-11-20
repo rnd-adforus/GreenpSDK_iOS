@@ -54,7 +54,7 @@ class FooterView : UIView {
         
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(2)
+            make.top.equalToSuperview().inset(4)
             make.left.right.equalToSuperview().inset(10)
             make.bottom.equalToSuperview()
         }

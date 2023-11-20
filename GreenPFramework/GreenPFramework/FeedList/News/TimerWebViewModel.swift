@@ -10,7 +10,13 @@ import Foundation
 class TimerWebViewModel {
     public var info: ParticipateInfo
     
-    private var timer: Timer?
+    private var timer: Timer? {
+        didSet {
+            if let newTimer = timer {
+                RunLoop.current.add(newTimer, forMode: .common)
+            }
+        }
+    }
     private var totalTimeMilli: Int = 0
     private var leftTime: Int = 0
     var onProgressTimer: ((Int, Int) -> Void)?
@@ -42,6 +48,7 @@ class TimerWebViewModel {
     
     func pauseTimer() {
         timer?.invalidate()
+        timer = nil
     }
     
     func resumeTimer() {

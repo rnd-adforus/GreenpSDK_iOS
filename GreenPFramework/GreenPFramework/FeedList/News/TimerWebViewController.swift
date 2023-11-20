@@ -65,6 +65,11 @@ class TimerWebViewController : WebViewController {
         }
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        timerWebViewModel.pauseTimer()
+    }
+    
     /// Initialize constraints
     private func setupLayoutConstraints() {
         view.addSubview(progressView)

@@ -9,8 +9,12 @@ import UIKit
 
 extension CircleProgressView {
     public func set(time: Int, passedTime: Int) {
-        label.text = "해당 기사를 \(time/1000)초 이상 시청하시면, 리워드가 지급됩니다.\n(현재 시청 시간: \(passedTime/1000)초)"
-        progressView.setValue(CGFloat(passedTime) / CGFloat(time))
+        DispatchQueue.main.async {
+//            if Double(passedTime/1000).truncatingRemainder(dividingBy: 1.0) == 0 {
+                self.label.text = "해당 기사를 \(time/1000)초 이상 시청하시면, 리워드가 지급됩니다.\n(현재 시청 시간: \(passedTime/1000)초)"
+//            }
+            self.progressView.setValue(CGFloat(passedTime) / CGFloat(time))
+        }
     }
     
     public func stop() {

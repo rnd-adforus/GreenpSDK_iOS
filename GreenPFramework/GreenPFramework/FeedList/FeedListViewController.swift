@@ -83,8 +83,7 @@ class FeedListViewController : UIViewController {
         }
         detailViewModel.onFailureReturnParticipateURL = { message in
             DispatchQueue.main.async {
-                self.presentNewsFeedDetailView(info: ParticipateInfo(result: "0", message: "", url: "naver.com"))
-//                self.alert(message: message, cancelTitle: "확인")
+                self.alert(message: message, cancelTitle: "확인")
             }
         }
     }
@@ -184,9 +183,11 @@ class FeedListViewController : UIViewController {
     }
     
     private func presentNewsFeedDetailView(info: ParticipateInfo) {
-        let vc = TimerWebViewController(url: info.url)
-        vc.timerWebViewModel = TimerWebViewModel(info: info)
-        self.navigationController?.pushViewController(vc, animated: true)
+        DispatchQueue.main.async {
+            let vc = TimerWebViewController(url: info.url)
+            vc.timerWebViewModel = TimerWebViewModel(info: info)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     private func presentDetailWebView(url: String) {
