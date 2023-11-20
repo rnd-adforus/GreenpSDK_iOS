@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func show(_ sender: Any) {
-        builder?.initilize(on: self)
+        builder?.show(on: self)
     }
     
 }

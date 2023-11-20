@@ -78,6 +78,10 @@ class FeedListViewController : UIViewController {
         feedListViewModel.onShouldMoveNewsDetailView = { feed in
             self.checkCanParticipateNewsDetailView(feed: feed)
         }
+        feedListViewModel.onShouldDeleteCellConfig = { indexPath in
+            self.deleteSelectedCell(at: indexPath)
+        }
+        
         detailViewModel.onSuccessReturnParticipateURL = { info in
             self.presentNewsFeedDetailView(info: info)
         }
@@ -186,21 +190,22 @@ class FeedListViewController : UIViewController {
         DispatchQueue.main.async {
             let vc = TimerWebViewController(url: info.url)
             vc.timerWebViewModel = TimerWebViewModel(info: info)
-            self.navigationController?.pushViewController(vc, animated: true)
+            vc.delegate = self
+            vc.isModalInPresentation = true
+            let navi = NavigationController(rootViewController: vc)
+            navi.presentationController?.delegate = vc
+            self.present(navi, animated: true)
         }
     }
     
-    private func presentDetailWebView(url: String) {
-        DispatchQueue.main.async {
-            let vc = WebViewController(url: url)
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+    private func deleteSelectedCell(at indexPath: IndexPath) {
+        cellConfigs.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
     }
 }
 
 extension FeedListViewController : TagViewControllerDelegate {
     func tagViewDidSelectItemOn(tagKey key: String) {
-//        cellConfigs.removeAll()
         feedListViewModel.changeTag(key: key)
     }
 }
@@ -232,5 +237,11 @@ extension FeedListViewController : UIScrollViewDelegate {
             self.tableView.tableFooterView = createSpinnerFooter()
             feedListViewModel.loadNextPage()
         }
+    }
+}
+
+extension FeedListViewController : TimerWebViewControllerDelegate {
+    func timerWebViewDidCompleteAddJoin() {
+        feedListViewModel.deleteRow()
     }
 }

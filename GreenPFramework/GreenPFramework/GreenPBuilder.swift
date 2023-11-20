@@ -11,9 +11,8 @@ import UIKit
 open class GreenPBuilder {
     internal init() {}
 
-    public func initilize(on viewController: UIViewController) {
+    public func show(on viewController: UIViewController) {
         let vc = SplashViewController()
-//        let vc = OfferWallViewController()
         let navi = NavigationController(rootViewController: vc)
         navi.modalPresentationStyle = .automatic
         navi.isModalInPresentation = true

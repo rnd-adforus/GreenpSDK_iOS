@@ -18,6 +18,9 @@ class BaseViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        closeButton.snp.makeConstraints { make in
+            make.size.equalTo(35)
+        }
         closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
     }
     
@@ -25,8 +28,15 @@ class BaseViewController : UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: closeButton)
     }
     
-    @objc private func close() {
+    @objc public func close() {
         dismiss(animated: true)
+    }
+    
+    open func presentDetailWebView(url: String) {
+        DispatchQueue.main.async {
+            let vc = WebViewController(url: url)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 

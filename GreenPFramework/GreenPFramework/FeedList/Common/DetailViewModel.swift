@@ -23,6 +23,20 @@ class DetailViewModel {
         self.feed = feed
     }
     
+    func sendImpressionCount() {
+        if feed?.category != "CPA" { return }
+        guard let feedID = feed?.id else {
+            return
+        }
+        Task {
+            do {
+                let _: APIResult = try await NetworkManager.shared.request(subURL: "sdk/imp.html?appcode=\(UserInfo.shared.appCode ?? "")&ads_idx=\(feedID)", method: .get)
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     func participateIn() {
         guard let feedID = feed?.id else {
             return

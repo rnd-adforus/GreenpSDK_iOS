@@ -74,9 +74,10 @@ class FeedDetailViewController : BaseViewController {
         super.viewDidLoad()
         setupUI(with: detailViewModel)
         detailViewModel.onSuccessReturnParticipateURL = { info in
-            DispatchQueue.main.async {
-                UIApplication.shared.open(URL(string: info.url)!)
-            }
+            self.presentDetailWebView(url: info.url)
+//            DispatchQueue.main.async {
+//                UIApplication.shared.open(URL(string: info.url)!)
+//            }
         }
         detailViewModel.onFailureReturnParticipateURL = { message in
             DispatchQueue.main.async {
@@ -161,6 +162,7 @@ class FeedDetailViewController : BaseViewController {
     }
     
     @objc private func didTapParticipateInButton(_ sender: UIButton) {
+        detailViewModel.sendImpressionCount()
         detailViewModel.participateIn()
     }
     

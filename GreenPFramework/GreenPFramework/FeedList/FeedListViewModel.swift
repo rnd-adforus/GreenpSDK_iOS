@@ -19,7 +19,8 @@ class FeedListViewModel {
             onSuccessLoadCategories?(tags)
         }
     }
-    var feedList: [FeedInfo] = []
+    private var feedList: [FeedInfo] = []
+    private var selectedIndexPath: IndexPath?
     
     var onSuccessLoadCategories: (([SettingsData.Data.Tab.Filter]) -> Void)?
     var onSuccessLoadFeedList: (([FeedCellConfig]) -> Void)?
@@ -27,6 +28,7 @@ class FeedListViewModel {
     var onFailLoadFeedNoMorePage: (() -> Void)?
     var onShouldMoveDetailView: ((FeedList.Feed) -> Void)?
     var onShouldMoveNewsDetailView: ((FeedList.Feed) -> Void)?
+    var onShouldDeleteCellConfig: ((IndexPath) -> Void)?
     
     private var isLoading: Bool = false
     
@@ -72,7 +74,9 @@ class FeedListViewModel {
         }
         
         @Sendable func saveAndConvert(newFeeds: [FeedList.Feed], tag: String) -> [FeedCellConfig] {
-            let newConfigs = createCellConfigs(from: newFeeds)
+            let newConfigs = newFeeds.map{
+                FeedCellConfig(feed: $0, buttonTitle: UserInfo.shared.tabs[tabIndex].name)
+            }
             for (i, list) in feedList.enumerated() {
                 if list.key == tag {
                     feedList[i].feeds += newFeeds
@@ -82,14 +86,6 @@ class FeedListViewModel {
             }
             return newConfigs
         }
-    }
-    
-    private func createCellConfigs(from feeds: [FeedList.Feed]) -> [FeedCellConfig] {
-        let configs = feeds.map{ feed in
-            let subMenuTitle = UserInfo.shared.filters[tabIndex][feed.subMenuValue]
-            return FeedCellConfig(feed: feed, subMenuTitle: subMenuTitle)
-        }
-        return configs
     }
     
     // MARK: Actions
@@ -114,12 +110,23 @@ class FeedListViewModel {
         guard let feedList = feedList.filter({ $0.key == selectedTag ?? TAG_KEY_ALL }).first?.feeds else {
             return
         }
-        
+        self.selectedIndexPath = indexPath
         let feed = feedList[indexPath.row]
         if feed.category == "NEWS" {
             onShouldMoveNewsDetailView?(feed)
         } else {
             onShouldMoveDetailView?(feed)
         }
+    }
+    
+    func deleteRow() {
+        guard let selectedIndexPath = selectedIndexPath else {
+            return
+        }
+//        guard let feedList = feedList.filter({ $0.key == selectedTag ?? TAG_KEY_ALL }).first?.feeds else {
+//            return
+//        }
+//        feedList.remove(at: selectedIndexPath.row)
+//        onShouldDeleteCellConfig?(selectedIndexPath)
     }
 }

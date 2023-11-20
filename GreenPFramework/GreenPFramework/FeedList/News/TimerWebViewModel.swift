@@ -23,6 +23,8 @@ class TimerWebViewModel {
     var onEndTimer: (() -> Void)?
     var onSuccessParticipate: (() -> Void)?
     var onFailureParticipate: ((String) -> Void)?
+    var onComfirmDismiss: (() -> Void)?
+    var onShowAlertOnDismiss: (() -> Void)?
 
     init(info: ParticipateInfo) {
         self.info = info
@@ -30,6 +32,7 @@ class TimerWebViewModel {
     }
     
     func startTimer() {
+        if timer != nil { return }
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(start), userInfo: nil, repeats: true)
         leftTime = totalTimeMilli
         onProgressTimer?(totalTimeMilli, 0)
@@ -39,7 +42,7 @@ class TimerWebViewModel {
         leftTime -= 1
         onProgressTimer?(Int(totalTimeMilli), Int(totalTimeMilli - leftTime))
         
-        if leftTime <= 0 {
+        if leftTime == 0, timer != nil {
             timer?.invalidate()
             timer = nil
             onEndTimer?()
@@ -53,9 +56,22 @@ class TimerWebViewModel {
     
     func resumeTimer() {
         if leftTime <= 0 {
+            timer?.invalidate()
+            timer = nil
             return
         }
-        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(start), userInfo: nil, repeats: true)
+        if timer == nil {
+            timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(start), userInfo: nil, repeats: true)
+        }
+    }
+    
+    func checkCanDismiss() {
+        if leftTime <= 0 {
+            onComfirmDismiss?()
+        } else {
+            pauseTimer()
+            onShowAlertOnDismiss?()
+        }
     }
     
     func participateInNews() {

@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol TimerWebViewControllerDelegate : AnyObject {
+    func timerWebViewDidCompleteAddJoin()
+}
+
 class TimerWebViewController : WebViewController {
     public var timerWebViewModel: TimerWebViewModel!
+    public weak var delegate: TimerWebViewControllerDelegate?
+    
     private lazy var infoView: UIView = {
         let view = UIView()
         view.backgroundColor = .black.withAlphaComponent(0.7)
@@ -56,17 +62,28 @@ class TimerWebViewController : WebViewController {
             self.requestParticipateInNews()
         }
         timerWebViewModel.onSuccessParticipate = {
-            self.stopProgressView()
+            self.presentSuccessParticipate()
         }
         timerWebViewModel.onFailureParticipate = { message in
             DispatchQueue.main.async {
                 self.alert(message: message, cancelTitle: "확인")
             }
         }
+        timerWebViewModel.onComfirmDismiss = {
+            self.dismiss(animated: true)
+        }
+        timerWebViewModel.onShowAlertOnDismiss = {
+            self.presentConfirmDismissAlert()
+        }
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        view.bringSubviewToFront(closeButton)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         timerWebViewModel.pauseTimer()
     }
     
@@ -116,6 +133,10 @@ class TimerWebViewController : WebViewController {
         timerWebViewModel.resumeTimer()
     }
     
+    override func close() {
+        timerWebViewModel.checkCanDismiss()
+    }
+    
     private func refreshProgressView(time: Int, passedTime: Int) {
         progressView.set(time: time, passedTime: passedTime)
     }
@@ -124,9 +145,18 @@ class TimerWebViewController : WebViewController {
         timerWebViewModel.participateInNews()
     }
     
-    private func stopProgressView() {
+    private func presentSuccessParticipate() {
         DispatchQueue.main.async {
             self.progressView.stop()
+            self.delegate?.timerWebViewDidCompleteAddJoin()
+        }
+    }
+    
+    private func presentConfirmDismissAlert() {
+        alert(message: "지금 페이지를 나가시면 리워드를 적립받을 수 없습니다.\n페이지를 나가시겠습니까?", title: "알림", confirmTitle: "나가기", confirmHandler: { _ in
+            self.dismiss(animated: true)
+        }, cancelTitle: "머무르기") { _ in
+            self.timerWebViewModel.resumeTimer()
         }
     }
 }
@@ -134,5 +164,11 @@ class TimerWebViewController : WebViewController {
 extension TimerWebViewController : UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
+    }
+}
+
+extension TimerWebViewController : UIAdaptivePresentationControllerDelegate {
+    func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
+        timerWebViewModel.checkCanDismiss()
     }
 }

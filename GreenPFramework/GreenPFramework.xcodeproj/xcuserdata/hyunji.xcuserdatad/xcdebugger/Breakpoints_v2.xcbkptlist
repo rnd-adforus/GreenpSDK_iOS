@@ -55,94 +55,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "236C27C3-FC1A-4796-A8DB-0974A357780B"
+            uuid = "95F30C34-9455-4365-9BE1-852D2ED1EEF0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GreenPFramework/FeedList/Common/WebViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "webView(_:decidePolicyFor:decisionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C767C9D0-213B-4124-A5F4-847657C22DB7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GreenPFramework/FeedList/News/TimerWebViewModel.swift"
+            filePath = "GreenPFramework/FeedList/FeedListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "participateInNews()"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
+            landmarkName = "deleteSelectedCell(at:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "236C27C3-FC1A-4796-A8DB-0974A357780B - e906d1860613134f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in GreenPFramework.TimerWebViewModel.participateInNews() -&gt; ()"
-                  moduleName = "GreenPFramework"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hyunji/Documents/GitHub/GreenpSDK_iOS/GreenPFramework/GreenPFramework/FeedList/News/TimerWebViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "172">
-               </Location>
-               <Location
-                  uuid = "236C27C3-FC1A-4796-A8DB-0974A357780B - 94dd583a092ddf41"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in GreenPFramework.TimerWebViewModel.participateInNews() -&gt; ()"
-                  moduleName = "GreenPFramework"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hyunji/Documents/GitHub/GreenpSDK_iOS/GreenPFramework/GreenPFramework/FeedList/News/TimerWebViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "76">
-               </Location>
-               <Location
-                  uuid = "236C27C3-FC1A-4796-A8DB-0974A357780B - 5a8b80feb8b7a15"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in GreenPFramework.TimerWebViewModel.participateInNews() -&gt; ()"
-                  moduleName = "GreenPFramework"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hyunji/Documents/GitHub/GreenpSDK_iOS/GreenPFramework/GreenPFramework/FeedList/News/TimerWebViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  uuid = "236C27C3-FC1A-4796-A8DB-0974A357780B - e906d1860613134f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in GreenPFramework.TimerWebViewModel.participateInNews() -&gt; ()"
-                  moduleName = "GreenPFramework"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hyunji/Documents/GitHub/GreenpSDK_iOS/GreenPFramework/GreenPFramework/FeedList/News/TimerWebViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "72">
-               </Location>
-               <Location
-                  uuid = "236C27C3-FC1A-4796-A8DB-0974A357780B - 87232ac8798fb54c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in GreenPFramework.TimerWebViewModel.participateInNews() -&gt; ()"
-                  moduleName = "GreenPFramework"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hyunji/Documents/GitHub/GreenpSDK_iOS/GreenPFramework/GreenPFramework/FeedList/News/TimerWebViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "72">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

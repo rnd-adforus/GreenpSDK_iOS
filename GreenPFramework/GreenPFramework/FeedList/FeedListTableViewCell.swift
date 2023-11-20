@@ -10,6 +10,7 @@ import SnapKit
 import Kingfisher
 
 struct FeedCellConfig {
+    var id: String
     var name: String
     var contents: String
     var imageURL: String
@@ -17,13 +18,14 @@ struct FeedCellConfig {
     var reward: Int
     var buttonTitle: String?
     
-    init(feed: FeedList.Feed, subMenuTitle: String?) {
+    init(feed: FeedList.Feed, buttonTitle: String) {
+        self.id = feed.id
         self.name = feed.name
         self.contents = feed.subTitle
         self.type = feed.imageURLStr.isEmpty ? .list : .feed
         self.imageURL = feed.imageURLStr.isEmpty ? feed.iconURLStr : feed.imageURLStr
         self.reward = feed.reward
-        self.buttonTitle = subMenuTitle
+        self.buttonTitle = buttonTitle
     }
 }
 
@@ -69,6 +71,7 @@ class FeedListTableViewCell : UITableViewCell, TableViewCellReusable {
         button.titleLabel?.font = .nanumSquare(size: 14, family: .bold)
         button.backgroundColor = UserInfo.shared.themeColor
         button.layer.cornerRadius = 4
+        button.isEnabled = false
         return button
     }()
     
@@ -121,7 +124,8 @@ class FeedListTableViewCell : UITableViewCell, TableViewCellReusable {
         }()
         contentView.addSubview(bgView)
         bgView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(10)
+            make.left.right.equalToSuperview().inset(10)
+            make.top.bottom.equalToSuperview().inset(5)
         }
         bgView.addSubview(verticalStackView)
         verticalStackView.snp.makeConstraints { make in

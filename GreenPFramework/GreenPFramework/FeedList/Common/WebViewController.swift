@@ -131,6 +131,9 @@ extension WebViewController : WKNavigationDelegate, WKUIDelegate {
     }
 
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        if webView.url == nil {
+            navigationController?.popViewController(animated: false)
+        }
         activityIndicator.stopAnimating()
     }
 
