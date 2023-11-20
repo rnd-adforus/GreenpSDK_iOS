@@ -59,6 +59,7 @@
 		52A5E0402B09C7E1001699B5 /* TimerWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A5E03F2B09C7E1001699B5 /* TimerWebViewController.swift */; };
 		52A5E0422B09C94D001699B5 /* TimerWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A5E0412B09C94D001699B5 /* TimerWebViewModel.swift */; };
 		52A5E0442B09D9F6001699B5 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A5E0432B09D9F6001699B5 /* CircleProgressView.swift */; };
+		52C8AD152B0B7BFC007F8960 /* Participate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8AD142B0B7BFC007F8960 /* Participate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		52A5E03F2B09C7E1001699B5 /* TimerWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWebViewController.swift; sourceTree = "<group>"; };
 		52A5E0412B09C94D001699B5 /* TimerWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWebViewModel.swift; sourceTree = "<group>"; };
 		52A5E0432B09D9F6001699B5 /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
+		52C8AD142B0B7BFC007F8960 /* Participate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +261,7 @@
 				523E9D402B039938009C338B /* APIResult.swift */,
 				523E9D3C2B0398E4009C338B /* Settings.swift */,
 				523E9D5E2B04E6F3009C338B /* FeedList.swift */,
+				52C8AD142B0B7BFC007F8960 /* Participate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				523E9D5F2B04E6F3009C338B /* FeedList.swift in Sources */,
 				52A5E0442B09D9F6001699B5 /* CircleProgressView.swift in Sources */,
 				523E9D552B03B085009C338B /* TagViewController.swift in Sources */,
+				52C8AD152B0B7BFC007F8960 /* Participate.swift in Sources */,
 				523E9D462B03A740009C338B /* FeedListViewController.swift in Sources */,
 				523E9CF72B037623009C338B /* SceneDelegate.swift in Sources */,
 				523E9D5D2B04E6B7009C338B /* FeedListViewModel.swift in Sources */,

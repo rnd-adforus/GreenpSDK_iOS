@@ -32,13 +32,13 @@ class DetailViewModel {
         Task {
             do {
                 let result: ParticipateInfo = try await NetworkManager.shared.request(subURL: "sdk/ads_join.html", params: param.dictionary, method: .get)
-                if result.result == "S", let url = URL(string: result.url) {
+                if result.result == "S", let _ = URL(string: result.url) {
                     onSuccessReturnParticipateURL?(result)
                 } else {
                     onFailureReturnParticipateURL?(result.message.isEmpty ? "Invalidate URL address!" : result.message)
                 }
             } catch let error {
-                onFailureReturnParticipateURL?(error.localizedDescription)
+                print(error.localizedDescription)
             }
         }
     }

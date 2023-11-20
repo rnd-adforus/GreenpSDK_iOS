@@ -8,19 +8,18 @@
 import UIKit
 
 class FeedListViewModel {
+    private let TAG_KEY_ALL = "All"
+    
     var tabIndex: Int = 0
     var selectedTag: String?
     
     var tags: [SettingsData.Data.Tab.Filter] = [] {
         didSet {
+            feedList = [FeedInfo(key: TAG_KEY_ALL)] + tags.map{ FeedInfo(key: $0.key) }
             onSuccessLoadCategories?(tags)
         }
     }
-    var feeds: [FeedList.Feed] = []
-    var feedCellConfigs: [FeedCellConfig] = []
-    
-    var filteredFeeds:  [FeedList.Feed] = []
-    var filteredCellConfigs: [FeedCellConfig] = []
+    var feedList: [FeedInfo] = []
     
     var onSuccessLoadCategories: (([SettingsData.Data.Tab.Filter]) -> Void)?
     var onSuccessLoadFeedList: (([FeedCellConfig]) -> Void)?
@@ -35,7 +34,7 @@ class FeedListViewModel {
     }
     
     func load() {
-        if feeds.isEmpty == false { return }
+        if feedList.isEmpty == false { return }
         tags = UserInfo.shared.tabs[tabIndex].filterList
         getFeedList(completion: onNeedReloadFeedList)
     }
@@ -45,14 +44,17 @@ class FeedListViewModel {
     }
     
     func getFeedList(completion: (([FeedCellConfig]) -> Void)?) {
-        let existCount: Int = selectedTag == nil ? feeds.count : filteredFeeds.count
-        if existCount % FEED_PAGE_LIMIT != 0 {
+        let tagKey = selectedTag ?? TAG_KEY_ALL
+        guard let list = feedList.filter({ $0.key == tagKey }).first else {
+            return
+        }
+        if list.lastPageDidLoad {
             onFailLoadFeedNoMorePage?()
             return
         }
         
-        let page = existCount / FEED_PAGE_LIMIT + 1
         let category = UserInfo.shared.tabs[tabIndex].key
+        let page = list.feeds.count / FEED_PAGE_LIMIT + 1
         let param = FeedListParam(category: category, filterKey: selectedTag, page: page, limit: FEED_PAGE_LIMIT)
         if isLoading { return }
         Task {
@@ -60,7 +62,7 @@ class FeedListViewModel {
                 isLoading = true
                 let result: FeedList = try await NetworkManager.shared.request(subURL: "sdk/ads_list_new.html", params: param.dictionary, method: .get)
                 isLoading = false
-                let configs = saveAndConvert(newFeeds: result.data, tag: selectedTag)
+                let configs = saveAndConvert(newFeeds: result.data, tag: tagKey)
                 if let completion = completion {
                     completion(configs)
                 }
@@ -69,14 +71,14 @@ class FeedListViewModel {
             }
         }
         
-        @Sendable func saveAndConvert(newFeeds: [FeedList.Feed], tag: String? = nil) -> [FeedCellConfig] {
+        @Sendable func saveAndConvert(newFeeds: [FeedList.Feed], tag: String) -> [FeedCellConfig] {
             let newConfigs = createCellConfigs(from: newFeeds)
-            if tag == nil {
-                self.feeds.append(contentsOf: newFeeds)
-                feedCellConfigs.append(contentsOf: newConfigs)
-            } else {
-                self.filteredFeeds.append(contentsOf: newFeeds)
-                filteredCellConfigs.append(contentsOf: newConfigs)
+            for (i, list) in feedList.enumerated() {
+                if list.key == tag {
+                    feedList[i].feeds += newFeeds
+                    feedList[i].cellConfigs += newConfigs
+                    feedList[i].lastPageDidLoad = newFeeds.count < FEED_PAGE_LIMIT
+                }
             }
             return newConfigs
         }
@@ -96,27 +98,24 @@ class FeedListViewModel {
         if key == "0" {
             // 전체 탭
             selectedTag = nil
-            onNeedReloadFeedList?(feedCellConfigs)
+            onNeedReloadFeedList?(feedList.filter{ $0.key == TAG_KEY_ALL }.first?.cellConfigs ?? [])
         } else {
             selectedTag = key
-            if filteredFeeds.first?.subMenuValue == key {
-                // 이전에 저장하고 있는 태그 필터와 동일한 태그를 선택한 경우
-                onNeedReloadFeedList?(filteredCellConfigs)
-            } else {
-                filteredFeeds.removeAll()
-                filteredCellConfigs.removeAll()
+            let loadedCellConfigs = feedList.filter{ $0.key == key }.first?.cellConfigs ?? []
+            if loadedCellConfigs.count == 0 {
                 getFeedList(completion: onNeedReloadFeedList)
+            } else {
+                onNeedReloadFeedList?(loadedCellConfigs)
             }
         }
     }
     
     func selectRow(at indexPath: IndexPath) {
-        var feed: FeedList.Feed
-        if selectedTag == nil {
-            feed = feeds[indexPath.row]
-        } else {
-            feed = filteredFeeds[indexPath.row]
+        guard let feedList = feedList.filter({ $0.key == selectedTag ?? TAG_KEY_ALL }).first?.feeds else {
+            return
         }
+        
+        let feed = feedList[indexPath.row]
         if feed.category == "NEWS" {
             onShouldMoveNewsDetailView?(feed)
         } else {
