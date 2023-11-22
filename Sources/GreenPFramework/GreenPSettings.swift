@@ -8,89 +8,90 @@
 import Foundation
 import AdSupport
 import MessageUI
+import AppTrackingTransparency
 
 let DEBUG_MARK = "OfferWall Message : "
 
-extension UIDevice {
-    var isSimulator: Bool {
-        #if targetEnvironment(simulator)
-            return true
-        #else
-            return false
-        #endif
-    }
+public protocol GreenPDelegate : AnyObject {
+    func greenPSettingsDidEnd(with message: String)
 }
 
 open class GreenPSettings {
+    private var delegate: GreenPDelegate?
     
-    /// 그린피 초기화 함수.
-    public init(appCode: String, userID: String, completion: @escaping (Bool, String?, GreenPBuilder?) -> Void) {
-        
+    public init(delegate: GreenPDelegate) {
+        self.delegate = delegate
+    }
+    
+    public func set(appCode: String, userID: String) {
         UserInfo.shared.appCode = appCode
         UserInfo.shared.userID = userID
-        
-        setIDFAAndRegistDevice(completion: completion)
-
-        //********************************** TEST
-        let homeDir = NSHomeDirectory()
-        print(homeDir)
+        setIDFAAndRegistDevice()
     }
-    
-    private func setIDFAAndRegistDevice(completion: @escaping (Bool, String?, GreenPBuilder?) -> Void) {
+
+    private func setIDFAAndRegistDevice() {
         let vm = TrackingViewModel()
-        
-        //처음 팝업을 표시하는 경우
-        if vm.shouldShowAppTrackingDialog() {
-            vm.requestAppTrackingPermission { [weak self] (status) in
-                vm.updateCurrentStatus()
-                
-                if vm.isAuthorized() {
+        let status = ATTrackingManager.trackingAuthorizationStatus
+        if status == .authorized {
+            UserInfo.shared.idfa = vm.getIDFAStr()
+            regist()
+        } else if status == .denied || status == .restricted {
+            showSettingsAlert()
+        } else {
+            ATTrackingManager.requestTrackingAuthorization { [weak self] status in
+                if status == .authorized {
                     UserInfo.shared.idfa = vm.getIDFAStr()
-                    self?.regist(completion: completion)
+                    self?.regist()
+                } else {
+                    self?.showSettingsAlert()
                 }
             }
-        } else {  //이미 팝업을 표시한 적이 있는 경우
-            //권한을 받은 경우
-            if vm.isAuthorized() {
-                UserInfo.shared.idfa = vm.getIDFAStr()
-                self.regist(completion: completion)
-            }
-            //유저가 권한을 주지 않은 경우
-            else {
-                completion(false, "\(DEBUG_MARK)need IDFA authorization.", nil)
-            }
         }
     }
     
-    private func validateDeviceRegistParam(param: DeviceRegistParam) -> Bool {
-        if param.appCode.isEmpty || param.userID.isEmpty || param.idfa.isEmpty || param.uuid.isEmpty || param.model.isEmpty {
-            return false
-        }
-        else {
-            return true
-        }
+    private func showSettingsAlert() {
+        UIApplication.getMostTopViewController()?.alert(message: "리워드 적립을 위해 IDFA 정보가 필요합니다. 설정에서 광고 추적 권한을 허용해 주세요.", title: "알림", confirmTitle: "설정으로 이동", confirmHandler: { _ in
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                return
+            }
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                DispatchQueue.main.async {
+                    UIApplication.shared.open(settingsUrl)
+                }
+            }
+        }, cancelTitle: "닫기", cancelHandler: { _ in
+            self.delegate?.greenPSettingsDidEnd(with: "IDFA 권한 없음.")
+        })
     }
     
-    private func regist(completion: @escaping (Bool, String?, GreenPBuilder?) -> Void) {
-        
+    private func regist() {
         let param = DeviceRegistParam()
-        
-//        // 유저 인포 정보가 불충분한 경우
-//        if UIDevice.current.isSimulator == false && validateDeviceRegistParam(param: param) == false {
-//            completion(false, "UserInfo is incomplete", nil)
-//        }
-//
         Task {
             do {
                 let result: APIResult = try await NetworkManager.shared.request(subURL: "sdk/device_regist.html", params: param.dictionary, method: .get)
                 if result.result == "0" {
-                    completion(true, result.message, GreenPBuilder())
+                    Task { @MainActor in
+                        delegate?.greenPSettingsDidEnd(with: result.message)
+                    }
                 } else {
-                    completion(false, result.message, nil)
+                    Task { @MainActor in
+                        delegate?.greenPSettingsDidEnd(with: result.message)
+                    }
                 }
             } catch let error {
-                completion(false, error.localizedDescription, nil)
+                Task { @MainActor in
+                    delegate?.greenPSettingsDidEnd(with: error.localizedDescription)
+                }
             }
         }
+    }
+    
+    public func show(on viewController: UIViewController) {
+        UIFont.registerAllFonts()
+        let vc = SplashViewController()
+        let navi = NavigationController(rootViewController: vc)
+        navi.modalPresentationStyle = .automatic
+        navi.isModalInPresentation = true
+        viewController.present(navi, animated: true, completion: nil)
     }
 }

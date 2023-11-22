@@ -171,6 +171,7 @@
 				523E9D0A2B037624009C338B /* GreenPFrameworkTests */,
 				523E9D142B037624009C338B /* GreenPFrameworkUITests */,
 				523E9CF22B037623009C338B /* Products */,
+				52555F4D2B0E1A7500B7518E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -318,6 +319,13 @@
 				52A5E0372B07BDA1001699B5 /* FooterView.swift */,
 			);
 			path = OfferWallMain;
+			sourceTree = "<group>";
+		};
+		52555F4D2B0E1A7500B7518E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

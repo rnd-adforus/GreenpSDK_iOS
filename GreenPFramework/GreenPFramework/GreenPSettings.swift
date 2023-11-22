@@ -21,7 +21,14 @@ extension UIDevice {
     }
 }
 
+public protocol GreenPDelegate : AnyObject {
+    
+}
 open class GreenPSettings {
+    private var delegate: GreenPDelegate?
+    init(delegate: GreenPDelegate) {
+        self.delegate = delegate
+    }
     
     /// 그린피 초기화 함수.
     public init(appCode: String, userID: String, completion: @escaping (Bool, String?, GreenPBuilder?) -> Void) {
@@ -30,10 +37,6 @@ open class GreenPSettings {
         UserInfo.shared.userID = userID
         
         setIDFAAndRegistDevice(completion: completion)
-
-        //********************************** TEST
-        let homeDir = NSHomeDirectory()
-        print(homeDir)
     }
     
     private func setIDFAAndRegistDevice(completion: @escaping (Bool, String?, GreenPBuilder?) -> Void) {
