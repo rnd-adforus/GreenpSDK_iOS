@@ -114,7 +114,6 @@ class FeedListTableViewCell : UITableViewCell, TableViewCellReusable {
             stackView.axis = .vertical
             stackView.alignment = .fill
             stackView.distribution = .fill
-            stackView.setContentHuggingPriority(.required, for: .vertical)
             stackView.spacing = 10
             return stackView
         }()
@@ -122,7 +121,7 @@ class FeedListTableViewCell : UITableViewCell, TableViewCellReusable {
             let stackView = UIStackView()
             stackView.axis = .horizontal
             stackView.alignment = .center
-            stackView.distribution = .fill
+            stackView.distribution = .fillProportionally
             stackView.spacing = 10
             return stackView
         }()

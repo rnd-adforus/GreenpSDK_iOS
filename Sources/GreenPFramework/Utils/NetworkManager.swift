@@ -25,7 +25,6 @@ class NetworkManager {
                                              encoding: method == .post ? JSONEncoding.default : URLEncoding.queryString)
             .validate(statusCode: 200..<300)
         let response: DataResponse<T, AFError> = await request.serializingDecodable(T.self).response
-        print(response.description)
         switch response.result {
         case .success(let value):
             print(value)

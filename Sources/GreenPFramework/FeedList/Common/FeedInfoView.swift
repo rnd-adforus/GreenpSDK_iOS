@@ -54,6 +54,9 @@ class FeedInfoView : UIView {
     }
     
     private func setupLayoutConstraints() {
+        self.snp.makeConstraints { make in
+            make.height.equalTo(70)
+        }
         addSubview(titleLabel)
         addSubview(contentLabel)
         addSubview(rewardLabel)
@@ -67,7 +70,7 @@ class FeedInfoView : UIView {
             make.top.equalTo(self.snp.centerY).offset(5)
         }
         rewardLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(contentLabel.snp.bottom)
+            make.top.equalTo(self.snp.centerY).offset(3)
             make.right.equalToSuperview()
         }
     }
