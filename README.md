@@ -1,7 +1,7 @@
 ## GreenPFramework
 
-## Version 1.0.0
-- Swift version 5.0
+## Version 1.0.1
+- Swift version 5.8
 - Minimum iOS version 14.0
   
 ## Installation
@@ -19,21 +19,20 @@ GreenPFramework support [Swift Package Manager](https://www.swift.org/package-ma
 ```swift
 import GreenPFramework
 
-var builder: GreenPBuilder?
+private lazy var greenP = GreenPSettings(delegate: self)
 
 /// 오퍼월 초기화 및 사용자 등록
-func initializeOW() {
-    let greenP = GreenPSettings(appCode: /*앱 코드*/,
-                        userID: /*유저 아이디*/,
-                        completion: {  [weak self] (result, message, builder) in
-      if result == true {
-          // return builder
-      }
-  })
-}
+greenP.set(appCode: "B8PcNMrpS7", userID: userID)
 
 /// 화면에 오퍼월 충전소를 호출하는 함수.
 /// 버튼을 누를 때 호출
-builder?.show(on: self)
+greenP.show(on: self)
+
+
+extension ViewController : GreenPDelegate {
+    func greenPSettingsDidEnd(with message: String) {
+      // 성공 & 실패 시 메세지 노출
+    }
+}
 
 ```
