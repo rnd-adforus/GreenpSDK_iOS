@@ -54,6 +54,7 @@ struct FeedList : Decodable {
         var id: String
         var name: String
         var subTitle: String
+        var price: Int?
         var summary: String
         var imageURLStr: String
         var iconURLStr: String
@@ -65,6 +66,7 @@ struct FeedList : Decodable {
             case id = "ads_idx"
             case name = "ads_name"
             case subTitle = "ads_brief_txt"
+            case price = "ads_sale_price"
             case summary = "ads_summary"
             case imageURLStr = "ads_feed_img"
             case iconURLStr = "ads_icon_img"

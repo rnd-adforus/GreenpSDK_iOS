@@ -67,7 +67,7 @@ class FeedInfoView : UIView {
             make.top.equalTo(self.snp.centerY).offset(5)
         }
         rewardLabel.snp.makeConstraints { make in
-            make.top.equalTo(contentLabel.snp.top)
+            make.bottom.equalTo(contentLabel.snp.bottom)
             make.right.equalToSuperview()
         }
     }

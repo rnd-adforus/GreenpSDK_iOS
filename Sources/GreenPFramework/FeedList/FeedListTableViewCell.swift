@@ -21,7 +21,11 @@ struct FeedCellConfig {
     init(feed: FeedList.Feed, buttonTitle: String) {
         self.id = feed.id
         self.name = feed.name
-        self.contents = feed.subTitle
+        if let price = feed.price, buttonTitle == "쇼핑하기" {
+            self.contents = price.commaString() + "원"
+        } else {
+            self.contents = feed.subTitle
+        }
         self.type = feed.imageURLStr.isEmpty ? .list : .feed
         self.imageURL = feed.imageURLStr.isEmpty ? feed.iconURLStr : feed.imageURLStr
         self.reward = feed.reward

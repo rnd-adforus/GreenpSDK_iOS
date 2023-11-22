@@ -83,11 +83,18 @@ class FeedListViewController : UIViewController {
         }
         
         detailViewModel.onSuccessReturnParticipateURL = { info in
-            self.presentNewsFeedDetailView(info: info)
+            DispatchQueue.main.async {
+                self.presentNewsFeedDetailView(info: info)
+            }
         }
         detailViewModel.onFailureReturnParticipateURL = { message in
             DispatchQueue.main.async {
                 self.alert(message: message, cancelTitle: "확인")
+            }
+        }
+        detailViewModel.shouldDeleteRowOnFailureParticipate = {
+            DispatchQueue.main.async {
+                self.feedListViewModel.deleteRow()
             }
         }
     }
@@ -178,6 +185,7 @@ class FeedListViewController : UIViewController {
     private func presentFeedDetailView(feed: FeedList.Feed) {
         let vc = FeedDetailViewController()
         vc.detailViewModel = DetailViewModel(feed: feed)
+        vc.delegate = self
         let navi = NavigationController(rootViewController: vc)
         present(navi, animated: true)
     }
@@ -237,6 +245,12 @@ extension FeedListViewController : UIScrollViewDelegate {
             self.tableView.tableFooterView = createSpinnerFooter()
             feedListViewModel.loadNextPage()
         }
+    }
+}
+
+extension FeedListViewController : FeedDetailViewControllerDelegate {
+    func feedDetailViewDidReceiveFailMessage() {
+        feedListViewModel.deleteRow()
     }
 }
 

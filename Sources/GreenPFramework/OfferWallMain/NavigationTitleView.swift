@@ -15,8 +15,8 @@ class NavigationTitleView : UIStackView {
     }()
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "greenp"
-        label.font = .nanumSquare(size: 22, family: .bold)
+        label.text = UserInfo.shared.title
+        label.font = .nanumSquare(size: 18, family: .bold)
         label.textColor = .white
         return label
     }()
@@ -38,7 +38,7 @@ class NavigationTitleView : UIStackView {
     }
     
     private func initView() {
-        spacing = 10
+        spacing = 5
         axis = .horizontal
     }
     
@@ -47,7 +47,7 @@ class NavigationTitleView : UIStackView {
         addArrangedSubview(titleLabel)
         
         logoImageView.snp.makeConstraints { make in
-            make.size.equalTo(30)
+            make.size.equalTo(25)
         }
     }
     

@@ -19,7 +19,7 @@ class UserInfo {
     
     private init() {
         uuidStr = UIDevice.current.identifierForVendor?.uuidString ?? "NULL"
-        settings = SettingsData.Data(listType: .list, themeColor: "#2986cc", subThemeColor: "#f44336", fontColor: "#f3f6f4", subFontColor: "#ea9999", tabData: [])
+        settings = SettingsData.Data(listType: .list, title: "greenp", themeColor: "#2986cc", subThemeColor: "#f44336", fontColor: "#f3f6f4", subFontColor: "#ea9999", tabData: [])
     }
     
     var appCode: String? {
@@ -91,6 +91,7 @@ class UserInfo {
     }
     var filters: [Dictionary<String, String>] = [[:]] 
     
+    lazy var title: String = settings.title
     lazy var themeColor: UIColor = UIColor(hex: settings.themeColor)
     lazy var subThemeColor: UIColor = UIColor(hex: settings.subThemeColor)
     lazy var fontColor: UIColor = UIColor(hex: settings.fontColor)

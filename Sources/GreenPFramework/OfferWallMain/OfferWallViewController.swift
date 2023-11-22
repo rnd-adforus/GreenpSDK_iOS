@@ -108,7 +108,7 @@ class OfferWallViewController : BaseViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapFooterView(_:)))
         footer.addGestureRecognizer(tap)
     }
-    
+     
     private func configureNavigationBar() {
         closeButton.tintColor = .white
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: naviTitleView)

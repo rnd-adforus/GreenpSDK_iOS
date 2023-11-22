@@ -121,12 +121,12 @@ class FeedListViewModel {
     }
     
     func deleteRow() {
-        guard tabIndex == 2 else { return }
-        guard let selectedIndexPath = selectedIndexPath,
-              feedList.first?.feeds.count ?? 0 > selectedIndexPath.row else {
-            return
-        }
-        feedList[0].feeds.remove(at: selectedIndexPath.row)
+        guard let selectedIndexPath = selectedIndexPath else { return }
+        let tagKey = selectedTag ?? TAG_KEY_ALL
+        let tagIndex = tags.enumerated().filter({ $0.1.key == tagKey }).first?.offset ?? 0
+        let index = tabIndex == 2 ? 0 : tagIndex
+        if feedList[index].feeds.count < selectedIndexPath.row { return }
+        feedList[index].feeds.remove(at: selectedIndexPath.row)
         onShouldDeleteCellConfig?(selectedIndexPath)
     }
 }

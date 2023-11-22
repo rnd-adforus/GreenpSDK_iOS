@@ -15,6 +15,7 @@ class DetailViewModel {
     }
     var onSuccessReturnParticipateURL: ((ParticipateInfo) -> Void)?
     var onFailureReturnParticipateURL: ((String) -> Void)?
+    var shouldDeleteRowOnFailureParticipate: (() -> Void)?
 
     init() {}
     
@@ -49,6 +50,9 @@ class DetailViewModel {
                 if result.result == "S", let _ = URL(string: result.url) {
                     onSuccessReturnParticipateURL?(result)
                 } else {
+                    if result.result == "-201" {
+                        shouldDeleteRowOnFailureParticipate?()
+                    }
                     onFailureReturnParticipateURL?(result.message.isEmpty ? "Invalidate URL address!" : result.message)
                 }
             } catch let error {

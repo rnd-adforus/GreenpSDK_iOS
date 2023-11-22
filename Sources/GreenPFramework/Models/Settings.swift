@@ -74,6 +74,7 @@ struct SettingsData : Decodable {
     
     struct Data : Decodable {
         var listType: ListType
+        var title: String
         var themeColor: String
         var subThemeColor: String
         var fontColor: String
@@ -83,6 +84,7 @@ struct SettingsData : Decodable {
         
         private enum CodingKeys : String, CodingKey {
             case listType = "list_type"
+            case title
             case themeColor = "color"
             case subThemeColor = "small_bg_color"
             case fontColor = "font_color"
@@ -115,7 +117,7 @@ struct SettingsData : Decodable {
                 let values = try decoder.container(keyedBy: CodingKeys.self)
                 key = try values.decode(String.self, forKey: .key)
                 name = try values.decode(String.self, forKey: .name)
-                filterList = try values.decode([Filter].self, forKey: .filterList).filter{ $0.key != "20" }
+                filterList = try values.decode([Filter].self, forKey: .filterList).filter{ $0.name != "내려받기" }
             }
         }
     }

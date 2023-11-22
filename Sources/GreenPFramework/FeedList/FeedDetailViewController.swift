@@ -8,8 +8,13 @@
 import UIKit
 import Kingfisher
 
+protocol FeedDetailViewControllerDelegate : AnyObject {
+    func feedDetailViewDidReceiveFailMessage()
+}
+
 class FeedDetailViewController : BaseViewController {
     public var detailViewModel: DetailViewModel!
+    public weak var delegate: FeedDetailViewControllerDelegate?
     
     // MARK: Object lifecycle
     
@@ -61,7 +66,8 @@ class FeedDetailViewController : BaseViewController {
         """
         return view
     }()
-    
+    private let activityIndicator = UIActivityIndicatorView()
+
     // MARK: View lifecycle
     
     override func loadView() {
@@ -75,11 +81,24 @@ class FeedDetailViewController : BaseViewController {
         super.viewDidLoad()
         setupUI(with: detailViewModel)
         detailViewModel.onSuccessReturnParticipateURL = { info in
-            self.presentDetailWebView(url: info.url)
+            DispatchQueue.main.async {
+                self.button.isUserInteractionEnabled = true
+                self.activityIndicator.stopAnimating()
+                self.presentDetailWebView(url: info.url)
+            }
         }
         detailViewModel.onFailureReturnParticipateURL = { message in
             DispatchQueue.main.async {
-                self.alert(message: message, cancelTitle: "확인")
+                self.button.isUserInteractionEnabled = true
+                self.activityIndicator.stopAnimating()
+                self.alert(message: message, cancelTitle: "확인") { _ in
+                    self.dismiss(animated: true)
+                }
+            }
+        }
+        detailViewModel.shouldDeleteRowOnFailureParticipate = {
+            DispatchQueue.main.async {
+                self.delegate?.feedDetailViewDidReceiveFailMessage()
             }
         }
     }
@@ -135,6 +154,10 @@ class FeedDetailViewController : BaseViewController {
             make.left.right.equalToSuperview().inset(30)
             make.height.equalTo(50)
         }
+        buttonContainer.addSubview(activityIndicator)
+        activityIndicator.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
         scrollView.addSubview(summaryTextView)
         summaryTextView.snp.makeConstraints { make in
             make.top.equalTo(stackView.snp.bottom).offset(10)
@@ -160,12 +183,14 @@ class FeedDetailViewController : BaseViewController {
     }
     
     @objc private func didTapParticipateInButton(_ sender: UIButton) {
-        detailViewModel.sendImpressionCount()
+        button.isUserInteractionEnabled = false
+        activityIndicator.startAnimating()
         detailViewModel.participateIn()
+        detailViewModel.sendImpressionCount()
     }
     
     private func setupUI(with vm: DetailViewModel) {
-        title = "greenp"
+        title = UserInfo.shared.title
         guard let feed = vm.feed else { return }
         let imageURL = feed.imageURLStr.isEmpty ? feed.iconURLStr : feed.imageURLStr
         feedImageView.kf.setImage(with: URL(string: imageURL))
