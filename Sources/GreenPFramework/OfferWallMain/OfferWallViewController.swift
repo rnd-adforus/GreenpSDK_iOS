@@ -120,11 +120,38 @@ class OfferWallViewController : BaseViewController {
     }
     
     @objc private func didTapMyPageButton(_ sender: UIButton) {
-        UIApplication.shared.open(URL(string: MYPAGE_URL_ADDRESS)!)
+        var urlComponents = URLComponents(string: MYPAGE_URL_ADDRESS)!
+        
+        let appCodeItem = URLQueryItem(name: "appcode", value: UserInfo.shared.appCode)
+        let appUidItem = URLQueryItem(name: "app_uid", value: UserInfo.shared.userID)
+        let deviceIdItem = URLQueryItem(name: "deviceid", value: UserInfo.shared.uuidStr)
+        let idfaItem = URLQueryItem(name: "idfa", value: UserInfo.shared.idfa)
+        
+        urlComponents.queryItems = [appCodeItem, appUidItem, deviceIdItem, idfaItem]
+        
+        if let finalURL = urlComponents.url {
+            UIApplication.shared.open(finalURL)
+        }else {
+            print("Invalid URL")
+        }
+        
     }
     
     @objc private func didTapSupportButton(_ sender: UIButton) {
-        UIApplication.shared.open(URL(string: SUPPORT_URL_ADDRESS)!)
+        var urlComponents = URLComponents(string: SUPPORT_URL_ADDRESS)!
+        
+        let appCodeItem = URLQueryItem(name: "appcode", value: UserInfo.shared.appCode)
+        let appUidItem = URLQueryItem(name: "app_uid", value: UserInfo.shared.userID)
+        let deviceIdItem = URLQueryItem(name: "deviceid", value: UserInfo.shared.uuidStr)
+        let idfaItem = URLQueryItem(name: "idfa", value: UserInfo.shared.idfa)
+        
+        urlComponents.queryItems = [appCodeItem, appUidItem, deviceIdItem, idfaItem]
+        
+        if let finalURL = urlComponents.url {
+            UIApplication.shared.open(finalURL)
+        }else {
+            print("Invalid URL")
+        }
     }
     
     @objc private func didTapFooterView(_ sender: UITapGestureRecognizer) {
@@ -132,6 +159,25 @@ class OfferWallViewController : BaseViewController {
         let navi = NavigationController(rootViewController: vc)
         present(navi, animated: true)
     }
+    
+    func showToast(message: String, duration: TimeInterval = 2.0) {
+            let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 150, y: self.view.frame.size.height-100, width: 300, height: 35))
+            toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+            toastLabel.textColor = UIColor.white
+            toastLabel.textAlignment = .center
+            toastLabel.font = UIFont.systemFont(ofSize: 12)
+            toastLabel.text = message
+            toastLabel.alpha = 1.0
+            toastLabel.layer.cornerRadius = 10
+            toastLabel.clipsToBounds  =  true
+            self.view.addSubview(toastLabel)
+            
+            UIView.animate(withDuration: duration, delay: 0.1, options: .curveEaseOut, animations: {
+                toastLabel.alpha = 0.0
+            }, completion: {(isCompleted) in
+                toastLabel.removeFromSuperview()
+            })
+        }
     
 }
 
