@@ -1,6 +1,6 @@
 ## GreenPFramework
 
-## Version 1.0.3
+## Version 1.0.4
 - Swift version 5.8
 - Minimum iOS version 14.0
   
@@ -22,7 +22,7 @@ import GreenPFramework
 private lazy var greenP = GreenPSettings(delegate: self)
 
 /// 오퍼월 초기화 및 사용자 등록
-greenP.set(appCode: "your code", userID: userID)
+greenP.set(appCode: "Your Code", userID: "user ID")
 
 /// 화면에 오퍼월 충전소를 호출하는 함수.
 /// 버튼을 누를 때 호출
