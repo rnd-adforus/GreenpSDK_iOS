@@ -19,7 +19,7 @@ class UserInfo {
     
     private init() {
         uuidStr = UIDevice.current.identifierForVendor?.uuidString ?? "NULL"
-        settings = SettingsData.Data(listType: .list, title: "greenp", themeColor: "#2986cc", subThemeColor: "#f44336", fontColor: "#f3f6f4", subFontColor: "#ea9999", tabData: [])
+        settings = SettingsData.Data(listType: .list, title: "greenp", themeColor: "#2986cc", subThemeColor: "#f44336", fontColor: "#f3f6f4", subFontColor: "#ea9999", iconView: "Y", tabData: [])
     }
     
     var appCode: String? {
@@ -96,6 +96,7 @@ class UserInfo {
     lazy var subThemeColor: UIColor = UIColor(hex: settings.subThemeColor)
     lazy var fontColor: UIColor = UIColor(hex: settings.fontColor)
     lazy var subFontColor: UIColor = UIColor(hex: settings.subFontColor)
+    lazy var iconView: String = settings.iconView
     
     private func realignmentTabs(tabs: inout [SettingsData.Data.Tab]) {
         tabs.swapAt(0, 1)

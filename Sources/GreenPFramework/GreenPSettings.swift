@@ -32,6 +32,7 @@ open class GreenPSettings {
     private func setIDFAAndRegistDevice() {
         let vm = TrackingViewModel()
         let status = ATTrackingManager.trackingAuthorizationStatus
+        UserInfo.shared.idfa = ""
         if status == .authorized {
             UserInfo.shared.idfa = vm.getIDFAStr()
             regist()
@@ -87,11 +88,18 @@ open class GreenPSettings {
     }
     
     public func show(on viewController: UIViewController) {
-        UIFont.registerAllFonts()
-        let vc = SplashViewController()
-        let navi = NavigationController(rootViewController: vc)
-        navi.modalPresentationStyle = .automatic
-        navi.isModalInPresentation = true
-        viewController.present(navi, animated: true, completion: nil)
+        let status = ATTrackingManager.trackingAuthorizationStatus
+        if status == .authorized {
+            UIFont.registerAllFonts()
+            let vc = SplashViewController()
+            let navi = NavigationController(rootViewController: vc)
+            navi.modalPresentationStyle = .automatic
+            navi.isModalInPresentation = true
+            viewController.present(navi, animated: true, completion: nil)
+        }else{
+            UserInfo.shared.idfa = ""
+            showSettingsAlert()
+        }
+        
     }
 }

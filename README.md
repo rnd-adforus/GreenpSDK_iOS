@@ -22,7 +22,7 @@ import GreenPFramework
 private lazy var greenP = GreenPSettings(delegate: self)
 
 /// 오퍼월 초기화 및 사용자 등록
-greenP.set(appCode: "B8PcNMrpS7", userID: userID)
+greenP.set(appCode: "your code", userID: userID)
 
 /// 화면에 오퍼월 충전소를 호출하는 함수.
 /// 버튼을 누를 때 호출

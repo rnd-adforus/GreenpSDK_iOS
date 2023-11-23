@@ -79,6 +79,7 @@ struct SettingsData : Decodable {
         var subThemeColor: String
         var fontColor: String
         var subFontColor: String
+        var iconView: String
         
         var tabData: [Tab]
         
@@ -89,6 +90,7 @@ struct SettingsData : Decodable {
             case subThemeColor = "small_bg_color"
             case fontColor = "font_color"
             case subFontColor = "small_font_color"
+            case iconView = "icon_view"
             
             case tabData = "cate_order"
         }

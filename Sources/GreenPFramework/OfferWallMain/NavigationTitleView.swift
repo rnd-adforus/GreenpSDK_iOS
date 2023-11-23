@@ -43,12 +43,16 @@ class NavigationTitleView : UIStackView {
     }
     
     private func setupLayoutConstraints() {
-        addArrangedSubview(logoImageView)
-        addArrangedSubview(titleLabel)
-        
-        logoImageView.snp.makeConstraints { make in
-            make.size.equalTo(25)
+        if(UserInfo.shared.iconView == "Y"){
+            addArrangedSubview(logoImageView)
+            logoImageView.snp.makeConstraints { make in
+                make.size.equalTo(25)
+            }
+        }else{
+            logoImageView.removeFromSuperview()
         }
+        addArrangedSubview(titleLabel)
+       
     }
     
     private func setupActions() {

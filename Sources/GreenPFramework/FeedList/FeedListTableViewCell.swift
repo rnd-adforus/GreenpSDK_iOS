@@ -22,7 +22,12 @@ struct FeedCellConfig {
         self.id = feed.id
         self.name = feed.name
         if let price = feed.price, buttonTitle == "쇼핑하기" {
-            self.contents = price.commaString() + "원"
+            if(price.commaString() != "0") {
+                self.contents = price.commaString() + "원"
+            }else {
+                self.contents = ""
+            }
+            
         } else {
             self.contents = feed.subTitle
         }
