@@ -11,9 +11,9 @@ GreenPFramework support [Swift Package Manager](https://www.swift.org/package-ma
 
 ## Info.plist
 광고 추적 권한<br>
-<img width="1234" alt="스크린샷 2023-11-21 오후 9 05 22" src="https://github.com/rnd-adforus/GreenpSDK_iOS/assets/54663383/61ea8a3e-b931-4847-bffc-8c3c40c7b31b">
+<img width="1234" alt="스크린샷 2023-11-21 오후 9 05 22" src="https://i.imgur.com/mSqChu7.png">
 <br>http 통신 예외처리<br>
-<img width="803" alt="스크린샷 2023-11-21 오후 9 08 45" src="https://github.com/rnd-adforus/GreenpSDK_iOS/assets/54663383/03677f73-5197-40c8-8cf3-91c68e7849ba">
+<img width="803" alt="스크린샷 2023-11-21 오후 9 08 45" src="https://i.imgur.com/W43n4Oc.pnga">
 
 ## Initialize
 ```swift
