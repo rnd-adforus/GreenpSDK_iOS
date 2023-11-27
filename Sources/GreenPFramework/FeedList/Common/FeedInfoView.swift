@@ -8,10 +8,10 @@
 import UIKit
 
 extension FeedInfoView {
-    public func configure(title: String, content: String, reward: Int) {
+    public func configure(title: String, content: String, reward: Int, point: String) {
         titleLabel.text = title
         contentLabel.text = content
-        rewardLabel.text = reward.commaString() + " 포인트"
+        rewardLabel.text = reward.commaString() + " " + point
     }
 }
 
