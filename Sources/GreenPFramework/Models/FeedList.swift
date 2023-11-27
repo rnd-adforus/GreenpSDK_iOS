@@ -61,6 +61,7 @@ struct FeedList : Decodable {
         var subMenuValue: String
         var reward: Int
         var category: String
+        var pointType: String
         
         private enum CodingKeys : String, CodingKey {
             case id = "ads_idx"
@@ -73,6 +74,7 @@ struct FeedList : Decodable {
             case subMenuValue = "ads_sub_cate"
             case reward = "ads_reward_price"
             case category = "ads_cate"
+            case pointType = "ads_price_type"
         }
     }
 }

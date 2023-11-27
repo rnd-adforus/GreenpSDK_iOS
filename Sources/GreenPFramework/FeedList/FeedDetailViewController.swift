@@ -194,7 +194,7 @@ class FeedDetailViewController : BaseViewController {
         guard let feed = vm.feed else { return }
         let imageURL = feed.imageURLStr.isEmpty ? feed.iconURLStr : feed.imageURLStr
         feedImageView.kf.setImage(with: URL(string: imageURL))
-        feedInfoView.configure(title: feed.name, content: feed.subTitle, reward: feed.reward)
+        feedInfoView.configure(title: feed.name, content: feed.subTitle, reward: feed.reward, point: feed.pointType)
         button.setTitle("참여하고 리워드 받기", for: .normal)
         summaryTextView.text = feed.summary.replacingOccurrences(of: "\\n", with: "\n")
     }

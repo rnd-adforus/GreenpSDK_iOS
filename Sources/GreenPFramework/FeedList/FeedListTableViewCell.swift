@@ -16,6 +16,7 @@ struct FeedCellConfig {
     var imageURL: String
     var type: FeedUIType
     var reward: Int
+    var pointType: String
     var buttonTitle: String?
     
     init(feed: FeedList.Feed, buttonTitle: String) {
@@ -35,12 +36,13 @@ struct FeedCellConfig {
         self.imageURL = feed.imageURLStr.isEmpty ? feed.iconURLStr : feed.imageURLStr
         self.reward = feed.reward
         self.buttonTitle = buttonTitle
+        self.pointType = feed.pointType
     }
 }
 
 extension FeedListTableViewCell {
     func configure(_ data: FeedCellConfig) {
-        feedInfoView.configure(title: data.name, content: data.contents, reward: data.reward)
+        feedInfoView.configure(title: data.name, content: data.contents, reward: data.reward, point: data.pointType)
         if data.type == .feed {
             feedImageView.kf.setImage(with: URL(string: data.imageURL))
             updateUIOnFeedMode()
