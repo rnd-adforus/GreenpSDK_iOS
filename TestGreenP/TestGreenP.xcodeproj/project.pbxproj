@@ -16,7 +16,7 @@
 		50EA23382B0DB61700182F4D /* TestGreenPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA23372B0DB61700182F4D /* TestGreenPUITestsLaunchTests.swift */; };
 		50EA23462B0DB62400182F4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA23442B0DB62400182F4D /* ViewController.swift */; };
 		50EA23472B0DB62400182F4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50EA23452B0DB62400182F4D /* Main.storyboard */; };
-		526D2F7D2B0E3AB600A1DA81 /* GreenPFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 526D2F7C2B0E3AB600A1DA81 /* GreenPFramework */; };
+		595F37782B54F9B100145519 /* GreenPFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 595F37772B54F9B100145519 /* GreenPFramework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +50,7 @@
 		50EA23372B0DB61700182F4D /* TestGreenPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGreenPUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		50EA23442B0DB62400182F4D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		50EA23452B0DB62400182F4D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		59CC3F9A2B513A2B00D8F7F1 /* Flutter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Flutter.xcframework; path = ../my_app/build/ios/framework/Release/Flutter.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				526D2F7D2B0E3AB600A1DA81 /* GreenPFramework in Frameworks */,
+				595F37782B54F9B100145519 /* GreenPFramework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +134,7 @@
 		52B930E42B0E133900B63FFA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				59CC3F9A2B513A2B00D8F7F1 /* Flutter.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -154,7 +156,7 @@
 			);
 			name = TestGreenP;
 			packageProductDependencies = (
-				526D2F7C2B0E3AB600A1DA81 /* GreenPFramework */,
+				595F37772B54F9B100145519 /* GreenPFramework */,
 			);
 			productName = TestGreenP;
 			productReference = 50EA23112B0DB61500182F4D /* TestGreenP.app */;
@@ -229,7 +231,7 @@
 			);
 			mainGroup = 50EA23082B0DB61500182F4D;
 			packageReferences = (
-				526D2F7B2B0E3AB600A1DA81 /* XCRemoteSwiftPackageReference "GreenpSDK_iOS" */,
+				595F37762B54F9B100145519 /* XCRemoteSwiftPackageReference "GreenpSDK_iOS" */,
 			);
 			productRefGroup = 50EA23122B0DB61500182F4D /* Products */;
 			projectDirPath = "";
@@ -450,7 +452,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UXFWNHVHWG;
+				DEVELOPMENT_TEAM = L93V5H6A4M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestGreenP/Info.plist;
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "앱 활동 분석을 위해 IDFA 정보에 접근하려고 합니다.";
@@ -479,7 +481,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UXFWNHVHWG;
+				DEVELOPMENT_TEAM = L93V5H6A4M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestGreenP/Info.plist;
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "앱 활동 분석을 위해 IDFA 정보에 접근하려고 합니다.";
@@ -619,20 +621,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		526D2F7B2B0E3AB600A1DA81 /* XCRemoteSwiftPackageReference "GreenpSDK_iOS" */ = {
+		595F37762B54F9B100145519 /* XCRemoteSwiftPackageReference "GreenpSDK_iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rnd-adforus/GreenpSDK_iOS.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.1;
+				branch = Dev/flutterChannel;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		526D2F7C2B0E3AB600A1DA81 /* GreenPFramework */ = {
+		595F37772B54F9B100145519 /* GreenPFramework */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 526D2F7B2B0E3AB600A1DA81 /* XCRemoteSwiftPackageReference "GreenpSDK_iOS" */;
+			package = 595F37762B54F9B100145519 /* XCRemoteSwiftPackageReference "GreenpSDK_iOS" */;
 			productName = GreenPFramework;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/rnd-adforus/GreenpSDK_iOS.git",
       "state" : {
-        "revision" : "0481f3ff92b376ecc15e13feb4eb9c75d055ffc7",
-        "version" : "1.0.2"
+        "branch" : "Dev/flutterChannel",
+        "revision" : "d4a7d6ab3d21a15a84ea2161f020c08c637fc1a4"
       }
     },
     {

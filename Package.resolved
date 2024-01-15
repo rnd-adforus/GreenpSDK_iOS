@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onevcat/Kingfisher.git",
       "state" : {
-        "revision" : "277f1ab2c6664b19b4a412e32b094b201e2d5757",
-        "version" : "7.10.0"
+        "revision" : "3ec0ab0bca4feb56e8b33e289c9496e89059dd08",
+        "version" : "7.10.2"
       }
     },
     {
@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SnapKit/SnapKit.git",
       "state" : {
-        "revision" : "f222cbdf325885926566172f6f5f06af95473158",
-        "version" : "5.6.0"
+        "revision" : "e74fe2a978d1216c3602b129447c7301573cc2d8",
+        "version" : "5.7.0"
       }
     }
   ],
