@@ -55,6 +55,5 @@ extension ViewController : GreenPDelegate {
 |etc       |`int`    |referrer 값. 매체용 추가 정보(매체 uniq 클릭값 등) etc 대신 원하는 파라미터로 변경가능 |
 
 ## support for other platforms
-1. [Flutter](https://github.com/rnd-adforus/GreenpSDK_Android/wiki/Flutter-GreenpOfferwall-SDK-for-%08iOS)
-
+1. [Flutter](https://github.com/rnd-adforus/GreenpSDK_iOS/wiki/Flutter-GreenpOfferwall-SDK-for-%08iOS)
 
