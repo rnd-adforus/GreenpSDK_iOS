@@ -12,14 +12,15 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "GreenPFramework",
-            targets: ["GreenPFramework"]),
+            targets: ["GreenPFramework", "Flutter"]),
+    
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
          .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.8.1"),
-         .package(url: "https://github.com/onevcat/Kingfisher.git", from: "7.10.0"),
-         .package(url: "https://github.com/SnapKit/SnapKit.git", from: "5.6.0"),
-
+         .package(url: "https://github.com/onevcat/Kingfisher.git", from: "7.10.2"),
+         .package(url: "https://github.com/SnapKit/SnapKit.git", from: "5.7.0"),
+         
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -30,6 +31,10 @@ let package = Package(
             resources: [.process("Fonts"), Resource.process("Assets.xcassets")]),
         .testTarget(
             name: "GreenPFrameworkTests",
-            dependencies: ["GreenPFramework"])
+            dependencies: ["GreenPFramework"]),
+        .binaryTarget(
+            name: "Flutter",
+            path: "Flutter.xcframework"
+        ),
     ]
 )
