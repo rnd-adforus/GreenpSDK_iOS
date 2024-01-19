@@ -30,6 +30,36 @@ class NetworkManager {
             print(value)
             return value
         case .failure(let error):
+            print(error)
+            throw error
+        }
+    }
+    
+    func requestWithFile<T: Decodable>(subURL: String, fileURL: URL, params: Parameters, method: HTTPMethod) async throws -> T {
+        let url = "http://\(HOME_URL)/\(subURL)"
+        let request = sessionManager.upload(multipartFormData: { multipartFormData in
+                for(key, value) in params {
+                    if(key != "q_file") {
+                        if let data = "\(value)".data(using: .utf8) {
+                            multipartFormData.append(data, withName: key)
+                        }
+                    }
+                }
+                multipartFormData.append(fileURL, withName: "q_file", fileName: fileURL.lastPathComponent, mimeType: "application/octet-stream")
+            },
+            to: url,
+            method: method,
+            headers: HTTPHeaders(["Content-Type": "multipart/form-data"]),
+            interceptor: APIInterceptor()
+        )
+        
+        let response: DataResponse<T, AFError> = await request.serializingDecodable(T.self).response
+        switch response.result {
+        case .success(let value):
+            print(value)
+            return value
+        case .failure(let error):
+            print(error)
             throw error
         }
     }

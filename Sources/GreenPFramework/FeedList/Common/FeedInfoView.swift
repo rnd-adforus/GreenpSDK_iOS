@@ -11,7 +11,11 @@ extension FeedInfoView {
     public func configure(title: String, content: String, reward: Int, point: String) {
         titleLabel.text = title
         contentLabel.text = content
-        rewardLabel.text = reward.commaString() + " " + point
+        if (reward == 0 && point.isEmpty) {
+            rewardLabel.text = ""
+        } else {
+            rewardLabel.text = reward.commaString() + " " + point
+        }
     }
 }
 
@@ -29,7 +33,7 @@ class FeedInfoView : UIView {
     private let rewardLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .right
-        label.textColor = UserInfo.shared.themeColor
+        label.textColor = UserInfo.shared.btnColor
         label.font = .nanumSquare(size: 15, family: .bold)
         return label
     }()

@@ -17,9 +17,9 @@ class UserInfo {
     
     var uuidStr: String
     
-    private init() {
+    init() {
         uuidStr = UIDevice.current.identifierForVendor?.uuidString ?? "NULL"
-        settings = SettingsData.Data(listType: .list, title: "greenp", themeColor: "#2986cc", subThemeColor: "#f44336", fontColor: "#f3f6f4", subFontColor: "#ea9999", iconView: "Y", tabData: [])
+        settings = SettingsData.Data(listType: .list, title: "greenp", themeColor: "#a8d20f", subThemeColor: "#f8cf1c", fontColor: "#ffffff", subFontColor: "#444444", btnColor: "a8d20f", iconView: "Y", tabData: [])
     }
     
     var appCode: String? {
@@ -81,14 +81,16 @@ class UserInfo {
             subThemeColor = UIColor(hex: settings.subThemeColor)
             fontColor = UIColor(hex: settings.fontColor)
             subFontColor = UIColor(hex: settings.subFontColor)
+            btnColor = UIColor(hex: settings.btnColor)
         }
     }
     
-    var tabs: [SettingsData.Data.Tab] = [] {
-        didSet {
-            realignmentTabs(tabs: &tabs)
-        }
-    }
+    var tabs: [SettingsData.Data.Tab] = []
+//    var tabs: [SettingsData.Data.Tab] = [] {
+//        didSet {
+//            realignmentTabs(tabs: &tabs)
+//        }
+//    }
     var filters: [Dictionary<String, String>] = [[:]] 
     
     lazy var title: String = settings.title
@@ -97,8 +99,9 @@ class UserInfo {
     lazy var fontColor: UIColor = UIColor(hex: settings.fontColor)
     lazy var subFontColor: UIColor = UIColor(hex: settings.subFontColor)
     lazy var iconView: String = settings.iconView
+    lazy var btnColor: UIColor = UIColor(hex: settings.btnColor)
     
-    private func realignmentTabs(tabs: inout [SettingsData.Data.Tab]) {
-        tabs.swapAt(0, 1)
-    }
+//    private func realignmentTabs(tabs: inout [SettingsData.Data.Tab]) {
+//        tabs.swapAt(0, 1)
+//    }
 }

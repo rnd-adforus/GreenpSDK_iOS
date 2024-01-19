@@ -30,7 +30,7 @@ class TagCell : UICollectionViewCell, CollectionViewCellReusable {
     public lazy var label: UILabel = {
         let label = UILabel()
         label.font = .nanumSquare(size: 10, family: .bold)
-        label.textColor = .white
+        label.textColor = UserInfo.shared.subFontColor
         label.backgroundColor = .clear
         return label
     }()

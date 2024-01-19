@@ -1,73 +1,120 @@
 //
-//  FeedListTableViewCell.swift
-//  GreenPFramework
+//  MypageListTableViewHeaderCell.swift
 //
-//  Created by 심현지 on 2023/11/15.
+//
+//  Created by 신아람 on 1/8/24.
 //
 
 import UIKit
 import SnapKit
 import Kingfisher
 
-struct FeedCellConfig {
+struct MypageCellConfig {
     var id: String
     var name: String
-    var contents: String
-    var imageURL: String
-    var type: FeedUIType
+    var date: String
+    var imageURL: String?
     var reward: Int
     var pointType: String
+    var content: String
     var buttonTitle: String?
+    var isParticipateList: Bool
+    var isHidden: Bool
     
-    init(feed: FeedList.Feed, buttonTitle: String) {
-        self.id = feed.id
-        self.name = feed.name
-        if let price = feed.price, buttonTitle == "쇼핑하기" {
-            if(price.commaString() != "0") {
-                self.contents = price.commaString() + "원"
-            }else {
-                self.contents = ""
-            }
-            
+    init(participate: ParticipateList.Participate) {
+        self.id = String(participate.id)
+        self.name = participate.name
+        
+        if(participate.rwdStatus == "적립완료") {
+            self.reward = participate.price!
+            self.date = participate.rwdDay
+            self.pointType = participate.pointType
         } else {
-            self.contents = feed.subTitle
+            self.reward = 0
+            self.date = ""
+            self.pointType = ""
         }
-        self.type = feed.imageURLStr.isEmpty ? .list : .feed
-        self.imageURL = feed.imageURLStr.isEmpty ? feed.iconURLStr : feed.imageURLStr
-        self.reward = feed.reward
-        self.buttonTitle = buttonTitle
-        self.pointType = feed.pointType
+        
+        self.imageURL = participate.iconURLStr
+        self.buttonTitle = participate.rwdStatus
+        self.content = ""
+        self.isParticipateList = true
+        self.isHidden = true
+    }
+    
+    init(cs: CsList.Cs) {
+        self.id = cs.id
+        self.name = cs.name
+        self.date = cs.regDate
+        self.reward = cs.price
+        self.pointType = cs.priceType
+        self.imageURL = cs.iconImg
+        
+        if(self.reward == 0) {
+            self.pointType = ""
+        }
+        
+        if(!cs.answer.isEmpty) {
+            
+            var txt = cs.content
+            txt += "\n\n"
+            txt += "[답변일자]\(cs.answerDate)"
+            txt += "\n"
+            txt += "[답변내용]"
+            txt += "\n"
+            txt += cs.answer
+            
+            self.content = txt
+        } else {
+            self.content = cs.content
+        }
+        
+        self.buttonTitle = cs.status
+        self.isParticipateList = false
+        self.isHidden = true
     }
 }
 
-extension FeedListTableViewCell {
-    func configure(_ data: FeedCellConfig) {
-        feedInfoView.configure(title: data.name, content: data.contents, reward: data.reward, point: data.pointType)
-        if data.type == .feed {
-            feedImageView.kf.setImage(with: URL(string: data.imageURL))
-            updateUIOnFeedMode()
-        } else {
-            iconImageView.kf.setImage(with: URL(string: data.imageURL))
-            updateUIOnListMode()
+extension MypageListTableViewHeaderCell {
+    func configure(_ data: MypageCellConfig) {
+        feedInfoView.configure(title: data.name, content: data.date, reward: data.reward, point: data.pointType)
+        if let url = data.imageURL {
+            iconImageView.kf.setImage(with: URL(string: url))
         }
         if let buttonTitle = data.buttonTitle {
             button.setTitle(buttonTitle, for: .normal)
+            
+            
+            if(data.isParticipateList) {
+                if(buttonTitle != "적립완료") {
+                    button.backgroundColor = .gray
+                    button.titleLabel?.textColor = .white
+                }
+            } else {
+                if(buttonTitle != "답변완료") {
+                    button.backgroundColor = .gray
+                    button.titleLabel?.textColor = .white
+                }
+            }
+            
             button.isHidden = false
         } else {
             button.isHidden = true
         }
+        
+        if(data.isParticipateList) {
+            updateUIOnParticipate()
+        } else {
+            updateUIOnCs()
+        }
+    }
+    
+    func setOpened(opened: Bool) {
+        bottom.isHiddenn = opened
     }
 }
 
-class FeedListTableViewCell : UITableViewCell, TableViewCellReusable {
-    private let feedImageView: UIImageView = {
-        let view = UIImageView()
-        view.layer.cornerRadius = 8
-        view.backgroundColor = .lightGray
-        view.clipsToBounds = true
-        view.contentMode = .scaleAspectFill
-        return view
-    }()
+class MypageListTableViewHeaderCell : UITableViewHeaderFooterView {
     private let iconImageView: UIImageView = {
         let view = UIImageView()
         view.layer.cornerRadius = 8
@@ -86,10 +133,12 @@ class FeedListTableViewCell : UITableViewCell, TableViewCellReusable {
         button.isEnabled = false
         return button
     }()
+    private let bottom = MypageInfoBottomView()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(reuseIdentifier: String?) {
+        super.init(reuseIdentifier: reuseIdentifier)
         setup()
+        self.isUserInteractionEnabled = true
     }
     
     required init?(coder: NSCoder) {
@@ -98,14 +147,10 @@ class FeedListTableViewCell : UITableViewCell, TableViewCellReusable {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        feedImageView.image = nil
         iconImageView.image = nil
-        feedImageView.isHidden = true
-        iconImageView.isHidden = true
     }
     
     private func setup() {
-        selectionStyle = .none
         backgroundColor = .clear
         contentView.backgroundColor = .clear
         setupLayoutConstraints()
@@ -115,6 +160,7 @@ class FeedListTableViewCell : UITableViewCell, TableViewCellReusable {
         let bgView: UIView = {
             let view = UIView()
             view.backgroundColor = .white
+            view.translatesAutoresizingMaskIntoConstraints = false
             return view
         }()
         let verticalStackView: UIStackView = {
@@ -144,11 +190,7 @@ class FeedListTableViewCell : UITableViewCell, TableViewCellReusable {
             make.bottom.equalToSuperview().inset(10)
         }
         
-        verticalStackView.addArrangedSubview(feedImageView)
         verticalStackView.addArrangedSubview(horizontalStackView)
-        feedImageView.snp.makeConstraints { make in
-            make.width.equalTo(feedImageView.snp.height).multipliedBy(2).priority(.high)
-        }
         horizontalStackView.snp.makeConstraints { make in
             make.height.equalTo(70)
         }
@@ -166,15 +208,15 @@ class FeedListTableViewCell : UITableViewCell, TableViewCellReusable {
             make.width.equalTo(80)
             make.height.equalTo(30)
         }
+        verticalStackView.addArrangedSubview(bottom)
     }
     
-    private func updateUIOnListMode() {
-        feedImageView.isHidden = true
-        iconImageView.isHidden = false
+    private func updateUIOnParticipate() {
+        bottom.isHidden = true
     }
     
-    private func updateUIOnFeedMode() {
-        feedImageView.isHidden = false
-        iconImageView.isHidden = true
+    private func updateUIOnCs() {
+        bottom.isHidden = false
+        bottom.isHiddenn = true
     }
 }

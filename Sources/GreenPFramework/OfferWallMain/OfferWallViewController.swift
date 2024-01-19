@@ -120,37 +120,16 @@ class OfferWallViewController : BaseViewController {
     }
     
     @objc private func didTapMyPageButton(_ sender: UIButton) {
-        var urlComponents = URLComponents(string: MYPAGE_URL_ADDRESS)!
-        
-        let appCodeItem = URLQueryItem(name: "appcode", value: UserInfo.shared.appCode)
-        let appUidItem = URLQueryItem(name: "app_uid", value: UserInfo.shared.userID)
-        let deviceIdItem = URLQueryItem(name: "deviceid", value: UserInfo.shared.uuidStr)
-        let idfaItem = URLQueryItem(name: "idfa", value: UserInfo.shared.idfa)
-        
-        urlComponents.queryItems = [appCodeItem, appUidItem, deviceIdItem, idfaItem]
-        
-        if let finalURL = urlComponents.url {
-            UIApplication.shared.open(finalURL)
-        }else {
-            print("Invalid URL")
+        DispatchQueue.main.async {
+            let vc = MypageViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
-        
     }
     
     @objc private func didTapSupportButton(_ sender: UIButton) {
-        var urlComponents = URLComponents(string: SUPPORT_URL_ADDRESS)!
-        
-        let appCodeItem = URLQueryItem(name: "appcode", value: UserInfo.shared.appCode)
-        let appUidItem = URLQueryItem(name: "app_uid", value: UserInfo.shared.userID)
-        let deviceIdItem = URLQueryItem(name: "deviceid", value: UserInfo.shared.uuidStr)
-        let idfaItem = URLQueryItem(name: "idfa", value: UserInfo.shared.idfa)
-        
-        urlComponents.queryItems = [appCodeItem, appUidItem, deviceIdItem, idfaItem]
-        
-        if let finalURL = urlComponents.url {
-            UIApplication.shared.open(finalURL)
-        }else {
-            print("Invalid URL")
+        DispatchQueue.main.async {
+            let vc = CsViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
