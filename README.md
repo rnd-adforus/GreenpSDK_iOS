@@ -1,6 +1,6 @@
 ## GreenPFramework
 
-## Version 1.0.5
+## Version 1.0.6
 - Swift version 5.8
 - Minimum iOS version 14.0
   
