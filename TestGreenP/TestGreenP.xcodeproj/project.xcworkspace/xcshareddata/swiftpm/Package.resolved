@@ -14,7 +14,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/rnd-adforus/GreenpSDK_iOS.git",
       "state" : {
-        "revision" : "a40f22ffe3cd09062464b0e884969615099caa56",
+        "revision" : "90a4e353242eea381ce94e3a64b422f7fb4a4dac",
         "version" : "1.0.6"
       }
     },
