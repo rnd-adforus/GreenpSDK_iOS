@@ -32,9 +32,9 @@ let package = Package(
         .testTarget(
             name: "GreenPFrameworkTests",
             dependencies: ["GreenPFramework"]),
-        .binaryTarget(
-            name: "Flutter",
-            path: "Flutter.xcframework"
-        ),
+//        .binaryTarget(
+//            name: "Flutter",
+//            path: "Flutter.xcframework"
+//        ),
     ]
 )
