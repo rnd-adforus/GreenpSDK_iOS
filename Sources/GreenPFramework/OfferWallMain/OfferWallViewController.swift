@@ -7,13 +7,21 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
+import UAdFramework
 
 class OfferWallViewController : BaseViewController {
     private var childs: [FeedListViewController] = UserInfo.shared.tabs.enumerated().map{ FeedListViewController(index: $0.offset) }
     private var currentIndex: Int = 0
     private let offerWallViewModel = OfferWallViewModel()
 
-    // MARK: Object lifecycle
+    var countDownSeconds = 1
+    var popupView: UIView!
+    var countDownLabel: UILabel!
+    var blurredView: UIVisualEffectView!
+
+    private var splashBannerView: UAdBannerView!
+    private var uAdBannerView: UAdBannerView!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -22,6 +30,10 @@ class OfferWallViewController : BaseViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
+        splashBannerView = AdsGlobal.shared.splashBannerView
+        
+        let uAdBanner = UAdBanner(zoneId: "JTBrvxfhpzmsoH9KuxLOCm2kGWA0", rootViewController: self, delegate: self)
+        uAdBannerView = uAdBanner.getView()
     }
     
     private lazy var pageControl = PageControlView(delegate: self)
@@ -60,6 +72,15 @@ class OfferWallViewController : BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.childs.first?.feedListViewModel.load()
+        
+        if (shouldShowPopup() && AdsGlobal.shared.isSplashLoaded) {
+            setupPopupView()
+            Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCountDown), userInfo: nil, repeats: true)
+        }
+        
+        if(uAdBannerView != nil) {
+            uAdBannerView.load()
+        }
     }
     
     // MARK: Main
@@ -119,6 +140,71 @@ class OfferWallViewController : BaseViewController {
         ]
     }
     
+    private func setupPopupView() {
+        
+        let blurEffect = UIBlurEffect(style: .dark)
+        blurredView = UIVisualEffectView(effect: blurEffect)
+        blurredView.frame = view.bounds
+        view.addSubview(blurredView)
+        
+        popupView = UIView()
+        popupView.backgroundColor = UIColor.lightGray
+        
+        view.addSubview(popupView)
+        popupView.snp.makeConstraints { make in
+            make.width.equalTo(300)
+            make.height.equalTo(280)
+            make.center.equalToSuperview()
+        }
+
+        popupView.addSubview(splashBannerView)
+        
+        splashBannerView.snp.makeConstraints { make in
+            make.left.equalTo(popupView.snp.left)
+            make.top.equalTo(popupView.snp.top)
+        }
+        
+        countDownLabel = UILabel()
+        countDownLabel.textAlignment = .center
+        countDownLabel.textColor = UIColor.black
+        countDownLabel.backgroundColor = .white
+        countDownLabel.font = UIFont.systemFont(ofSize: 14)
+        
+        popupView.addSubview(countDownLabel)
+        countDownLabel.snp.makeConstraints { make in
+            make.bottom.equalTo(popupView.snp.bottom)
+            make.height.equalTo(30)
+            make.left.right.bottom.equalToSuperview()
+        }
+        
+        countDownLabel.text = "2초 후 자동으로 종료됩니다."
+    }
+    
+    func shouldShowPopup() -> Bool {
+        if let savedDate = UserDefaults.standard.object(forKey: "popupShownDate") as? Date {
+            let today = Calendar.current.startOfDay(for: Date())
+            let savedDay = Calendar.current.startOfDay(for: savedDate)
+            return today != savedDay
+        }
+        return true
+    }
+
+    func savePopupShownDate() {
+        UserDefaults.standard.set(Date(), forKey: "popupShownDate")
+    }
+    
+    @objc func updateCountDown() {
+        countDownLabel.text = "\(countDownSeconds)초 후 자동으로 종료됩니다."
+        countDownSeconds -= 1
+
+        if countDownSeconds < 0 {
+            popupView.removeFromSuperview()
+            blurredView.removeFromSuperview()
+            
+            savePopupShownDate()
+        }
+    }
+    
     @objc private func didTapMyPageButton(_ sender: UIButton) {
         DispatchQueue.main.async {
             let vc = MypageViewController()
@@ -146,5 +232,40 @@ extension OfferWallViewController : PageControlViewDelegate {
         pageViewController.setViewControllers([childs[index]], direction: .forward, animated: false, completion: {_ in
             self.childs[index].feedListViewModel.load()
         })
+    }
+}
+
+extension OfferWallViewController: UAdFullScreenDelegate {
+    func onFullScreenLoaded() {
+    }
+    
+    func onFullScreenClicked() {
+    }
+    
+    func onFullScreenShow() {
+    }
+    
+    func onFullScreenDismiss() {
+    }
+    
+    func onFullScreenFailed(msg: String) {
+    }
+}
+
+extension OfferWallViewController: UAdBannerViewDelegate {
+    func onBannerLoaded() {
+        
+        view.addSubview(uAdBannerView!)
+        uAdBannerView!.translatesAutoresizingMaskIntoConstraints = false
+        uAdBannerView!.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-15)
+            make.centerX.equalTo(view)
+        }
+    }
+    
+    func onBannerClicked() {
+    }
+    
+    func onBannerFailed(msg: String) {
     }
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import UAdFramework
 
 protocol FeedDetailViewControllerDelegate : AnyObject {
     func feedDetailViewDidReceiveFailMessage()
@@ -15,6 +16,8 @@ protocol FeedDetailViewControllerDelegate : AnyObject {
 class FeedDetailViewController : BaseViewController {
     public var detailViewModel: DetailViewModel!
     public weak var delegate: FeedDetailViewControllerDelegate?
+    
+    private var uAdBannerView: UAdBannerView?
     
     // MARK: Object lifecycle
     
@@ -25,6 +28,8 @@ class FeedDetailViewController : BaseViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
+        let uAdBanner = UAdBanner(zoneId: "1Ip4lvKogAIkwOWqbMSxxH8c0YUO", rootViewController: self, delegate: self)
+        uAdBannerView = uAdBanner.getView()
     }
     
     // MARK: Setup UI properties
@@ -75,6 +80,8 @@ class FeedDetailViewController : BaseViewController {
         setupLayoutConstraints()
         initView()
         setupActions()
+        
+        uAdBannerView?.load()
     }
     
     override func viewDidLoad() {
@@ -167,7 +174,14 @@ class FeedDetailViewController : BaseViewController {
         bottomInfoTextView.snp.makeConstraints { make in
             make.top.equalTo(summaryTextView.snp.bottom)
             make.left.right.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().inset(50)
+        }
+        
+        view.addSubview(uAdBannerView!)
+        uAdBannerView!.translatesAutoresizingMaskIntoConstraints = false
+        uAdBannerView!.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.centerX.equalTo(view)
         }
     }
     
@@ -197,6 +211,17 @@ class FeedDetailViewController : BaseViewController {
         feedInfoView.configure(title: feed.name, content: feed.subTitle, reward: feed.reward, point: feed.pointType)
         button.setTitle("참여하고 리워드 받기", for: .normal)
         summaryTextView.text = feed.summary.replacingOccurrences(of: "\\n", with: "\n")
+    }
+}
+
+extension FeedDetailViewController: UAdBannerViewDelegate {
+    func onBannerLoaded() {
+    }
+    
+    func onBannerClicked() {
+    }
+    
+    func onBannerFailed(msg: String) {
     }
 }
 

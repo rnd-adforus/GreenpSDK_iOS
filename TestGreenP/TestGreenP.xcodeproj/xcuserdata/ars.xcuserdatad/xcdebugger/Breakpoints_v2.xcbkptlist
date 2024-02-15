@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "9EC30B43-EF8C-4D54-A7AF-4B73548CF437"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5F063DCE-1056-4F47-A1F9-5CDFCA20FD95"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "configure(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5F063DCE-1056-4F47-A1F9-5CDFCA20FD95 - 1258a90cf9d0f7b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.FeedListTableViewAdCell.configure(UAdFramework.UAdNativeAd) -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "159">
+               </Location>
+               <Location
+                  uuid = "5F063DCE-1056-4F47-A1F9-5CDFCA20FD95 - 1258a90cf9d0f7b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.FeedListTableViewAdCell.configure(UAdFramework.UAdNativeAd) -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "162">
+               </Location>
+               <Location
+                  uuid = "5F063DCE-1056-4F47-A1F9-5CDFCA20FD95 - 1258a90cf9d0f7b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.FeedListTableViewAdCell.configure(UAdFramework.UAdNativeAd) -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "184">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B6FBF4AA-B1D1-493D-BB9E-435691B2E897"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "configure(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B6FBF4AA-B1D1-493D-BB9E-435691B2E897 - 100933b1fc94d86f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.FeedListTableViewAdCell.__allocating_init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; GreenPFramework.FeedListTableViewAdCell"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  uuid = "B6FBF4AA-B1D1-493D-BB9E-435691B2E897 - ecd9532f0e6a9a5b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.FeedListTableViewAdCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; GreenPFramework.FeedListTableViewAdCell"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "129">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4DA3436F-24B9-4F2D-9C7A-5ADBE238336B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "setup()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4DA3436F-24B9-4F2D-9C7A-5ADBE238336B - e67aad734b2e668"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.FeedListTableViewAdCell.setup() -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "1637">
+               </Location>
+               <Location
+                  uuid = "4DA3436F-24B9-4F2D-9C7A-5ADBE238336B - e67aad734b2e668"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.FeedListTableViewAdCell.setup() -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "1315">
+               </Location>
+               <Location
+                  uuid = "4DA3436F-24B9-4F2D-9C7A-5ADBE238336B - e67aad734b2e62a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.FeedListTableViewAdCell.setup() -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "1315">
+               </Location>
+               <Location
+                  uuid = "4DA3436F-24B9-4F2D-9C7A-5ADBE238336B - e67aad734b2e62a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.FeedListTableViewAdCell.setup() -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "132">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C4F0199B-2CF5-47CF-943B-99D039251A6E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "FeedListTableViewAdCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "C4F0199B-2CF5-47CF-943B-99D039251A6E - e67aad734b2e5ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.FeedListTableViewAdCell.setup() -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "1432">
+               </Location>
+               <Location
+                  uuid = "C4F0199B-2CF5-47CF-943B-99D039251A6E - e67aad734b2e5ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.FeedListTableViewAdCell.setup() -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "1110">
+               </Location>
+               <Location
+                  uuid = "C4F0199B-2CF5-47CF-943B-99D039251A6E - e67aad734b2e5ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.FeedListTableViewAdCell.setup() -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "1110">
+               </Location>
+               <Location
+                  uuid = "C4F0199B-2CF5-47CF-943B-99D039251A6E - 8c2f1de3f7bd4fb1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.FeedListTableViewAdCell.prepareForReuse() -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "41">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "40E1FA65-138E-4D9C-A408-FF393965B5A9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "configure(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "40E1FA65-138E-4D9C-A408-FF393965B5A9 - ecd9532f0e6a9af4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.FeedListTableViewAdCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; GreenPFramework.FeedListTableViewAdCell"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "417">
+               </Location>
+               <Location
+                  uuid = "40E1FA65-138E-4D9C-A408-FF393965B5A9 - ecd9532f0e6a9ab2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.FeedListTableViewAdCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; GreenPFramework.FeedListTableViewAdCell"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "417">
+               </Location>
+               <Location
+                  uuid = "40E1FA65-138E-4D9C-A408-FF393965B5A9 - 1258a90cf9d0f228"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.FeedListTableViewAdCell.configure(UAdFramework.UAdNativeAd) -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListTableViewAdCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "5725">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7DDC5025-077F-4534-B6B5-67B9124CF6F6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestGreenP/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "show(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BEFF2486-035A-43B4-9D0A-442AEA79E512"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/GreenPFramework/OfferWallMain/OfferWallViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "loadView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3B09697D-5312-413C-9347-E75A00D4C60D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../Library/Developer/Xcode/DerivedData/TestGreenP-aclvmjxnkqoasjaywdhpiqrepiyx/SourcePackages/checkouts/ADBC-UAd/Sources/UAdFramework/BannerAd/UAdBanner.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "init(zoneId:rootViewController:delegate:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3B09697D-5312-413C-9347-E75A00D4C60D - 771b89243af4c255"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UAdFramework.UAdBanner.init(zoneId: Swift.String, rootViewController: __C.UIViewController, delegate: Swift.Optional&lt;UAdFramework.UAdBannerViewDelegate&gt;) -&gt; UAdFramework.UAdBanner"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Library/Developer/Xcode/DerivedData/TestGreenP-aclvmjxnkqoasjaywdhpiqrepiyx/SourcePackages/checkouts/ADBC-UAd/Sources/UAdFramework/BannerAd/UAdBanner.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "184">
+               </Location>
+               <Location
+                  uuid = "3B09697D-5312-413C-9347-E75A00D4C60D - 771b89243af4c255"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UAdFramework.UAdBanner.init(zoneId: Swift.String, rootViewController: __C.UIViewController, delegate: Swift.Optional&lt;UAdFramework.UAdBannerViewDelegate&gt;) -&gt; UAdFramework.UAdBanner"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Library/Developer/Xcode/DerivedData/TestGreenP-aclvmjxnkqoasjaywdhpiqrepiyx/SourcePackages/checkouts/ADBC-UAd/Sources/UAdFramework/BannerAd/UAdBanner.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "932">
+               </Location>
+               <Location
+                  uuid = "3B09697D-5312-413C-9347-E75A00D4C60D - 195d4089086c52fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (UAdFramework.Setting.Ad) -&gt; Swift.Bool in UAdFramework.UAdBanner.init(zoneId: Swift.String, rootViewController: __C.UIViewController, delegate: Swift.Optional&lt;UAdFramework.UAdBannerViewDelegate&gt;) -&gt; UAdFramework.UAdBanner"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Library/Developer/Xcode/DerivedData/TestGreenP-aclvmjxnkqoasjaywdhpiqrepiyx/SourcePackages/checkouts/ADBC-UAd/Sources/UAdFramework/BannerAd/UAdBanner.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "3B09697D-5312-413C-9347-E75A00D4C60D - 771b89243af4c255"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UAdFramework.UAdBanner.init(zoneId: Swift.String, rootViewController: __C.UIViewController, delegate: Swift.Optional&lt;UAdFramework.UAdBannerViewDelegate&gt;) -&gt; UAdFramework.UAdBanner"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Library/Developer/Xcode/DerivedData/TestGreenP-aclvmjxnkqoasjaywdhpiqrepiyx/SourcePackages/checkouts/ADBC-UAd/Sources/UAdFramework/BannerAd/UAdBanner.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "177">
+               </Location>
+               <Location
+                  uuid = "3B09697D-5312-413C-9347-E75A00D4C60D - 771b89243af4c255"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UAdFramework.UAdBanner.init(zoneId: Swift.String, rootViewController: __C.UIViewController, delegate: Swift.Optional&lt;UAdFramework.UAdBannerViewDelegate&gt;) -&gt; UAdFramework.UAdBanner"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Library/Developer/Xcode/DerivedData/TestGreenP-aclvmjxnkqoasjaywdhpiqrepiyx/SourcePackages/checkouts/ADBC-UAd/Sources/UAdFramework/BannerAd/UAdBanner.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "1130">
+               </Location>
+               <Location
+                  uuid = "3B09697D-5312-413C-9347-E75A00D4C60D - 195d4089086c52fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (UAdFramework.Setting.Ad) -&gt; Swift.Bool in UAdFramework.UAdBanner.init(zoneId: Swift.String, rootViewController: __C.UIViewController, delegate: Swift.Optional&lt;UAdFramework.UAdBannerViewDelegate&gt;) -&gt; UAdFramework.UAdBanner"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Library/Developer/Xcode/DerivedData/TestGreenP-aclvmjxnkqoasjaywdhpiqrepiyx/SourcePackages/checkouts/ADBC-UAd/Sources/UAdFramework/BannerAd/UAdBanner.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "65">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A74D716E-BFF0-4120-8183-D729AC57EDA0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../Library/Developer/Xcode/DerivedData/TestGreenP-aclvmjxnkqoasjaywdhpiqrepiyx/SourcePackages/checkouts/ADBC-UAd/Sources/UAdFramework/UserInfo.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "adCodes"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "A74D716E-BFF0-4120-8183-D729AC57EDA0 - 858658db6b063cd9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UAdFramework.UserInfo.adCodes.getter : Swift.Array&lt;UAdFramework.Setting.Ad&gt;"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Library/Developer/Xcode/DerivedData/TestGreenP-aclvmjxnkqoasjaywdhpiqrepiyx/SourcePackages/checkouts/ADBC-UAd/Sources/UAdFramework/UserInfo.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "A74D716E-BFF0-4120-8183-D729AC57EDA0 - 858658db6b063cd9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UAdFramework.UserInfo.adCodes.getter : Swift.Array&lt;UAdFramework.Setting.Ad&gt;"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Library/Developer/Xcode/DerivedData/TestGreenP-aclvmjxnkqoasjaywdhpiqrepiyx/SourcePackages/checkouts/ADBC-UAd/Sources/UAdFramework/UserInfo.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "260">
+               </Location>
+               <Location
+                  uuid = "A74D716E-BFF0-4120-8183-D729AC57EDA0 - 858658db6b063cd9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UAdFramework.UserInfo.adCodes.getter : Swift.Array&lt;UAdFramework.Setting.Ad&gt;"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Library/Developer/Xcode/DerivedData/TestGreenP-aclvmjxnkqoasjaywdhpiqrepiyx/SourcePackages/checkouts/ADBC-UAd/Sources/UAdFramework/UserInfo.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "326">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4A1DB4F0-50B0-4B58-8BF8-338501C21A79"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/GreenPFramework/GreenPSettings.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "regist()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9020875-0FC3-46BE-AEFF-E43D908BA65D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../Library/Developer/Xcode/DerivedData/TestGreenP-aclvmjxnkqoasjaywdhpiqrepiyx/SourcePackages/checkouts/ADBC-UAd/Sources/UAdFramework/UAdMobileAds.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "initialize(appID:userID:isDebug:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B8EADC90-282C-43D6-9D7D-3A984C20B7DD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/GreenPFramework/AdsGlobal.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "makeGlobalViews()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "34DEB395-C187-4EF4-B168-0C73901BA348"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/GreenPFramework/OfferWallMain/OfferWallViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
+            landmarkName = "onBannerLoaded()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "34DEB395-C187-4EF4-B168-0C73901BA348 - 6484c113be5ac313"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SnapKit.ConstraintMaker) -&gt; () in GreenPFramework.OfferWallViewController.onBannerLoaded() -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/OfferWallMain/OfferWallViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "258"
+                  endingLineNumber = "258"
+                  offsetFromSymbolStart = "682">
+               </Location>
+               <Location
+                  uuid = "34DEB395-C187-4EF4-B168-0C73901BA348 - d2ab2af7beb78731"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.OfferWallViewController.onBannerLoaded() -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/OfferWallMain/OfferWallViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "258"
+                  endingLineNumber = "258"
+                  offsetFromSymbolStart = "69">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC7D8E9C-0752-493A-9FC1-5213B4DF9DDC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/GreenPFramework/FeedList/FeedListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "getMainList(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CC7D8E9C-0752-493A-9FC1-5213B4DF9DDC - 6f1adfd04f9e5586"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in GreenPFramework.FeedListViewModel.getMainList(completion: Swift.Optional&lt;(Swift.Array&lt;GreenPFramework.FeedList.Feed&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "149"
+                  endingLineNumber = "149"
+                  offsetFromSymbolStart = "171">
+               </Location>
+               <Location
+                  uuid = "CC7D8E9C-0752-493A-9FC1-5213B4DF9DDC - 12fbcdb973167c21"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in GreenPFramework.FeedListViewModel.getMainList(completion: Swift.Optional&lt;(Swift.Array&lt;GreenPFramework.MainData.Main&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "171">
+               </Location>
+               <Location
+                  uuid = "CC7D8E9C-0752-493A-9FC1-5213B4DF9DDC - 12fbcdb973167c21"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in GreenPFramework.FeedListViewModel.getMainList(completion: Swift.Optional&lt;(Swift.Array&lt;GreenPFramework.MainData.Main&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "174">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6553A9B7-795B-4A61-96D3-96591A52CA80"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/GreenPFramework/FeedList/FeedListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "getMainList(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "45293B7B-96C8-45FA-8DE5-D83633DB023C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/GreenPFramework/FeedList/FeedListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "getMainList(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "45293B7B-96C8-45FA-8DE5-D83633DB023C - 767372921970a946"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in GreenPFramework.FeedListViewModel.getMainList(completion: Swift.Optional&lt;(Swift.Array&lt;GreenPFramework.FeedList.Feed&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "151"
+                  endingLineNumber = "151"
+                  offsetFromSymbolStart = "342">
+               </Location>
+               <Location
+                  uuid = "45293B7B-96C8-45FA-8DE5-D83633DB023C - 79d0607b0ec8b3e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in GreenPFramework.FeedListViewModel.getMainList(completion: Swift.Optional&lt;(Swift.Array&lt;GreenPFramework.MainData.Main&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "342">
+               </Location>
+               <Location
+                  uuid = "45293B7B-96C8-45FA-8DE5-D83633DB023C - 79d0607b0ec8b3e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in GreenPFramework.FeedListViewModel.getMainList(completion: Swift.Optional&lt;(Swift.Array&lt;GreenPFramework.MainData.Main&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "359">
+               </Location>
+               <Location
+                  uuid = "45293B7B-96C8-45FA-8DE5-D83633DB023C - 79d0607b0ec8b3e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in GreenPFramework.FeedListViewModel.getMainList(completion: Swift.Optional&lt;(Swift.Array&lt;GreenPFramework.MainData.Main&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "386">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "29E478CD-5A59-4E54-BDB0-73E8560E7999"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../Library/Developer/Xcode/DerivedData/TestGreenP-aclvmjxnkqoasjaywdhpiqrepiyx/SourcePackages/checkouts/ADBC-UAd/Sources/UAdFramework/BannerAd/UAdRewardedAd.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "ad(_:didFailToPresentFullScreenContentWithError:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "29E478CD-5A59-4E54-BDB0-73E8560E7999 - 563ccddc4984120b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UAdFramework.UAdRewardedAd.ad(_: __C.GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError: Swift.Error) -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Library/Developer/Xcode/DerivedData/TestGreenP-aclvmjxnkqoasjaywdhpiqrepiyx/SourcePackages/checkouts/ADBC-UAd/Sources/UAdFramework/BannerAd/UAdRewardedAd.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "93">
+               </Location>
+               <Location
+                  uuid = "29E478CD-5A59-4E54-BDB0-73E8560E7999 - 563ccddc4984120b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UAdFramework.UAdRewardedAd.ad(_: __C.GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError: Swift.Error) -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Library/Developer/Xcode/DerivedData/TestGreenP-aclvmjxnkqoasjaywdhpiqrepiyx/SourcePackages/checkouts/ADBC-UAd/Sources/UAdFramework/BannerAd/UAdRewardedAd.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AA44FA64-4C5F-46D7-9686-96AC2A3BB326"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../Library/Developer/Xcode/DerivedData/TestGreenP-aclvmjxnkqoasjaywdhpiqrepiyx/SourcePackages/checkouts/ADBC-UAd/Sources/UAdFramework/BannerAd/UAdRewardedAd.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "adDidDismissFullScreenContent(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AA44FA64-4C5F-46D7-9686-96AC2A3BB326 - 7e18b94e4daed9db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UAdFramework.UAdRewardedAd.adDidDismissFullScreenContent(__C.GADFullScreenPresentingAd) -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Library/Developer/Xcode/DerivedData/TestGreenP-aclvmjxnkqoasjaywdhpiqrepiyx/SourcePackages/checkouts/ADBC-UAd/Sources/UAdFramework/BannerAd/UAdRewardedAd.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "62">
+               </Location>
+               <Location
+                  uuid = "AA44FA64-4C5F-46D7-9686-96AC2A3BB326 - 7e18b94e4daed9db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UAdFramework.UAdRewardedAd.adDidDismissFullScreenContent(__C.GADFullScreenPresentingAd) -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Library/Developer/Xcode/DerivedData/TestGreenP-aclvmjxnkqoasjaywdhpiqrepiyx/SourcePackages/checkouts/ADBC-UAd/Sources/UAdFramework/BannerAd/UAdRewardedAd.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F310B5A1-C843-4FB1-BCDE-E10CCAD5FA64"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/GreenPFramework/FeedList/FeedListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "486"
+            endingLineNumber = "486"
+            landmarkName = "FeedListViewController"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "01EFFFAB-A0F9-49FD-BC0A-F17B5D2D73D1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/GreenPFramework/FeedList/FeedListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
+            landmarkName = "updateTableView(with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "01EFFFAB-A0F9-49FD-BC0A-F17B5D2D73D1 - 77d4966f64787b2a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in GreenPFramework.FeedListViewController.updateTableView(with: Swift.Array&lt;GreenPFramework.FeedCellConfig&gt;) -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "227"
+                  endingLineNumber = "227"
+                  offsetFromSymbolStart = "600">
+               </Location>
+               <Location
+                  uuid = "01EFFFAB-A0F9-49FD-BC0A-F17B5D2D73D1 - 77d4966f64787b68"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in GreenPFramework.FeedListViewController.updateTableView(with: Swift.Array&lt;GreenPFramework.FeedCellConfig&gt;) -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "600">
+               </Location>
+               <Location
+                  uuid = "01EFFFAB-A0F9-49FD-BC0A-F17B5D2D73D1 - 77d4966f64787b68"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in GreenPFramework.FeedListViewController.updateTableView(with: Swift.Array&lt;GreenPFramework.FeedCellConfig&gt;) -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "520">
+               </Location>
+               <Location
+                  uuid = "01EFFFAB-A0F9-49FD-BC0A-F17B5D2D73D1 - 77d4966f64787bae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in GreenPFramework.FeedListViewController.updateTableView(with: Swift.Array&lt;GreenPFramework.FeedCellConfig&gt;) -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "223"
+                  endingLineNumber = "223"
+                  offsetFromSymbolStart = "600">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7DABCF1F-64C7-44B3-97F6-7CF0DFDA2891"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/GreenPFramework/AdsGlobal.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "onNativeLoaderLoaded(nativeAd:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2AAFE9B3-3183-4667-B79B-BD86773F0A1E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/GreenPFramework/FeedList/FeedListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "439"
+            endingLineNumber = "439"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2AAFE9B3-3183-4667-B79B-BD86773F0A1E - 24be6d3c874fc049"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.FeedListViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "376"
+                  endingLineNumber = "376"
+                  offsetFromSymbolStart = "260">
+               </Location>
+               <Location
+                  uuid = "2AAFE9B3-3183-4667-B79B-BD86773F0A1E - 24be6d3c874fcbe2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.FeedListViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "435"
+                  endingLineNumber = "435"
+                  offsetFromSymbolStart = "271">
+               </Location>
+               <Location
+                  uuid = "2AAFE9B3-3183-4667-B79B-BD86773F0A1E - 24be6d3c874fcbe2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.FeedListViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "435"
+                  endingLineNumber = "435"
+                  offsetFromSymbolStart = "328">
+               </Location>
+               <Location
+                  uuid = "2AAFE9B3-3183-4667-B79B-BD86773F0A1E - 24be6d3c874fc86e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.FeedListViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/FeedList/FeedListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "439"
+                  endingLineNumber = "439"
+                  offsetFromSymbolStart = "271">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FC32DADB-DC9B-4D39-86A3-1DA5046177AB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/GreenPFramework/FeedList/FeedListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "416"
+            endingLineNumber = "416"
+            landmarkName = "tagViewDidSelectItemOn(tagKey:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

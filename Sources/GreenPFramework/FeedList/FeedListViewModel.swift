@@ -1,6 +1,5 @@
 //
 //  FeedListViewModel.swift
-//  GreenPFramework
 //
 //  Created by 심현지 on 2023/11/15.
 //
@@ -31,6 +30,10 @@ class FeedListViewModel {
     var onShouldDeleteCellConfig: ((IndexPath) -> Void)?
     
     private var isLoading: Bool = false
+    
+    private var isMainListLoading: Bool = false
+    private var mainList: [MainData.Main] = []
+    var onSuccessLoadMainList: (([MainData.Main]) -> Void)?
     
     init() {
     }
@@ -89,8 +92,6 @@ class FeedListViewModel {
         }
     }
     
-    // MARK: Actions
-    
     func changeTag(key: String) {
         if key == "0" {
             // 전체 탭
@@ -120,6 +121,19 @@ class FeedListViewModel {
         }
     }
     
+    func selectRow(at indexPath: IndexPath, idx: Int) {
+        guard let feedList = feedList.filter({ $0.key == selectedTag ?? TAG_KEY_ALL }).first?.feeds else {
+            return
+        }
+        self.selectedIndexPath = indexPath
+        let feed = feedList[idx]
+        if feed.category == "NEWS" {
+            onShouldMoveNewsDetailView?(feed)
+        } else {
+            onShouldMoveDetailView?(feed)
+        }
+    }
+    
     func deleteRow() {
         guard let selectedIndexPath = selectedIndexPath else { return }
         let tagKey = selectedTag ?? TAG_KEY_ALL
@@ -128,5 +142,47 @@ class FeedListViewModel {
         if feedList[index].feeds.count < selectedIndexPath.row { return }
         feedList[index].feeds.remove(at: selectedIndexPath.row)
         onShouldDeleteCellConfig?(selectedIndexPath)
+    }
+    
+    func getMainList(completion: (([MainData.Main]) -> Void)?) {
+        
+        print("getFeedList")
+        
+        let param = MainListParam()
+        if isMainListLoading { return }
+        Task {
+            do {
+                isMainListLoading = true
+                let result: MainData = try await NetworkManager.shared.request(subURL: "sdk/main_list.html", params: param.dictionary, method: .get)
+                isMainListLoading = false
+
+                mainList = makeMainList(main: result.data.topData, reward: result.data.rewardData)
+                if let completion = completion {
+                    completion(mainList)
+                }
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        }
+        
+        @Sendable func makeMainList(main: [MainData.Main], reward: MainData.UAdReward) -> [MainData.Main] {
+            var mainList: [MainData.Main] = []
+            
+            if(!reward.iconURLStr.isEmpty) {
+                let reward = MainData.Main(id: "reward", name: "reward", cate: "", iconURLStr: reward.iconURLStr, price: 0, pointType: "", briefText: "", summary: "")
+                mainList.append(reward)
+            }
+            
+            let randomIndex = Int.random(in: 0..<main.count)
+            mainList.append(main[randomIndex])
+            
+            return mainList
+        }
+    }
+    
+    func mainDataConverter(data: MainData.Main) -> FeedList.Feed {
+        let feed = FeedList.Feed(id: data.id, name: data.name, subTitle: data.briefText, price: data.price, summary: data.summary, imageURLStr: data.iconURLStr, iconURLStr: data.iconURLStr, subMenuValue: "", reward: data.price, category: data.cate, pointType: data.pointType)
+        
+        return feed
     }
 }

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  ParticipateList.swift
 //  
 //
 //  Created by 신아람 on 12/22/23.
@@ -8,19 +8,17 @@
 import Foundation
 
 class ParticipateListParam : Device {
-    var deviceId: String?
     var sDate: String?
     var eDate: String?
     var page: Int?
     var limit: Int?
     
     private enum CodingKeys : String, CodingKey {
-        case deviceid, sdate, edate, page, limit
+        case sdate, edate, page, limit
     }
 
     override func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(deviceId, forKey: .deviceid)
         try container.encode(sDate, forKey: .sdate)
         try container.encode(eDate, forKey: .edate)
         try container.encode(page, forKey: .page)
@@ -31,7 +29,6 @@ class ParticipateListParam : Device {
     init(page: Int?, limit: Int?) {
         self.page = page
         self.limit = limit
-        self.deviceId = UserInfo.shared.uuidStr
         super.init()
         self.sDate = get30DaysAgoDate()
         self.eDate = getCurrentDate()

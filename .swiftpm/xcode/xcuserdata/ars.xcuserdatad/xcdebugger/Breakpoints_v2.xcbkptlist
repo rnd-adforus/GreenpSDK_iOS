@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "CD96B254-5432-4742-92FC-910238E69181"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "767E1565-1BDA-4F7A-AC87-16E0D190A3C4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/GreenPFramework/SplashViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "settingsDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "767E1565-1BDA-4F7A-AC87-16E0D190A3C4 - 73b149df0d620687"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.SplashViewController.settingsDidLoad() -&gt; ()"
+                  moduleName = "GreenPSample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "158">
+               </Location>
+               <Location
+                  uuid = "767E1565-1BDA-4F7A-AC87-16E0D190A3C4 - 8386eaf1a7cbe801"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in GreenPFramework.SplashViewController.settingsDidLoad() -&gt; ()"
+                  moduleName = "GreenPSample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "54">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "78F32D81-B9C9-4B46-AFDC-15B29F259A58"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/GreenPFramework/Cs/CsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "setupLayoutConstraints()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "78F32D81-B9C9-4B46-AFDC-15B29F259A58 - 61533be7beef9a57"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.CsViewController.setupLayoutConstraints() -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/Cs/CsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "41">
+               </Location>
+               <Location
+                  uuid = "78F32D81-B9C9-4B46-AFDC-15B29F259A58 - 61533be7beef9a57"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenPFramework.CsViewController.setupLayoutConstraints() -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/GreenpSDK_iOS/Sources/GreenPFramework/Cs/CsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

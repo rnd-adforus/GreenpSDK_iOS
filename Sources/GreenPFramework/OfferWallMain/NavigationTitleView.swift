@@ -9,8 +9,18 @@ import UIKit
 
 class NavigationTitleView : UIStackView {
     private let logoImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "greenp_logo", in: Bundle.module, with: nil))
+        //        let imageView = UIImageView(image: UIImage(named: "greenp_logo", in: Bundle.module, with: nil))
+        //        imageView.contentMode = .scaleAspectFit
+        
+        let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
+        
+        if(UserInfo.shared.settings.btnImg.isEmpty) {
+            imageView.image = UIImage(named: "greenp_logo", in: Bundle.module, with: nil)
+        } else {
+            imageView.kf.setImage(with: URL(string: UserInfo.shared.settings.btnImg))
+        }
+        
         return imageView
     }()
     private let titleLabel: UILabel = {

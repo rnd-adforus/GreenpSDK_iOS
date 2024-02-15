@@ -128,25 +128,9 @@ class ParticipateViewModel {
     
     func selectRow(at indexPath: IndexPath) {
         self.selectedIndexPath = indexPath
-        
-        
-        
-        
-//        let feed = feedList[indexPath.row]
-//        if feed.category == "NEWS" {
-//            onShouldMoveNewsDetailView?(feed)
-//        } else {
-//            onShouldMoveDetailView?(feed)
-//        }
     }
     
     func deleteRow() {
         guard let selectedIndexPath = selectedIndexPath else { return }
-//        let tagKey = selectedTag ?? TAG_KEY_ALL
-//        let tagIndex = tags.enumerated().filter({ $0.1.key == tagKey }).first?.offset ?? 0
-//        let index = tabIndex == 2 ? 0 : tagIndex
-//        if feedList[index].feeds.count < selectedIndexPath.row { return }
-//        feedList[index].feeds.remove(at: selectedIndexPath.row)
-//        onShouldDeleteCellConfig?(selectedIndexPath)
     }
 }

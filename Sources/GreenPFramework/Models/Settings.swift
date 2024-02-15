@@ -81,6 +81,7 @@ struct SettingsData : Decodable {
         var subFontColor: String
         var btnColor: String
         var iconView: String
+        var btnImg: String
         
         var tabData: [Tab]
         
@@ -93,6 +94,7 @@ struct SettingsData : Decodable {
             case subFontColor = "small_font_color"
             case btnColor = "btn_color"
             case iconView = "icon_view"
+            case btnImg = "btn_img"
             
             case tabData = "cate_order"
         }

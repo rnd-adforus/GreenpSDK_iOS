@@ -13,7 +13,7 @@ class NetworkManager {
 
     private let sessionManager: Session = {
         let configuration = URLSessionConfiguration.default
-        let sessionManager = Session(configuration: configuration, interceptor: APIInterceptor())
+        let sessionManager = Session(configuration: configuration, interceptor: APIInterceptor(), eventMonitors: [RequestLogger()])
         return sessionManager
     }()
     
@@ -100,6 +100,27 @@ final class APIInterceptor: RequestInterceptor {
             completion(.retryWithDelay(timeDelay))
         } else {
             completion(.doNotRetry)
+        }
+    }
+}
+
+class RequestLogger: EventMonitor {
+    func requestDidFinish(_ request: Request) {
+        if let urlRequest = request.request,
+           let url = urlRequest.url,
+           let httpMethod = urlRequest.httpMethod {
+            print("Request - URL: \(url), Method: \(httpMethod)")
+            if let bodyData = urlRequest.httpBody,
+               let bodyString = String(data: bodyData, encoding: .utf8) {
+                print("Request Body: \(bodyString)")
+            }
+        }
+    }
+    
+    func request<Value>(_ request: DataRequest, didParseResponse response: DataResponse<Value, AFError>) {
+        if let data = response.data,
+           let stringData = String(data: data, encoding: .utf8) {
+            print("Response Data: \(stringData)")
         }
     }
 }

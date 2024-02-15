@@ -9,6 +9,7 @@ import Foundation
 import AdSupport
 import MessageUI
 import AppTrackingTransparency
+import UAdFramework
 
 let DEBUG_MARK = "OfferWall Message : "
 
@@ -85,6 +86,13 @@ open class GreenPSettings {
                 }
             }
         }
+        
+        UAdMobileAds.shared().initialize(appID: "chEhhIVGS3", userID: UserInfo.shared.userID!, isDebug: true, completion: { result, msg in
+            
+            if(result) {
+                AdsGlobal.shared.makeGlobalViews()
+            }
+        })
     }
     
     public func show(on viewController: UIViewController) {

@@ -19,7 +19,7 @@ class UserInfo {
     
     init() {
         uuidStr = UIDevice.current.identifierForVendor?.uuidString ?? "NULL"
-        settings = SettingsData.Data(listType: .list, title: "greenp", themeColor: "#a8d20f", subThemeColor: "#f8cf1c", fontColor: "#ffffff", subFontColor: "#444444", btnColor: "a8d20f", iconView: "Y", tabData: [])
+        settings = SettingsData.Data(listType: .list, title: "greenp", themeColor: "#a8d20f", subThemeColor: "#f8cf1c", fontColor: "#ffffff", subFontColor: "#444444", btnColor: "a8d20f", iconView: "Y", btnImg: "", tabData: [])
     }
     
     var appCode: String? {
