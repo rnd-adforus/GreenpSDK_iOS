@@ -44,7 +44,8 @@ extension FeedListTableViewCell {
     func configure(_ data: FeedCellConfig) {
         feedInfoView.configure(title: data.name, content: data.contents, reward: data.reward, point: data.pointType)
         if data.type == .feed {
-            feedImageView.kf.setImage(with: URL(string: data.imageURL))
+            let preImag = UIImage(named: "greenp_logo", in: Bundle.module, with: nil)
+            feedImageView.kf.setImage(with: URL(string: data.imageURL), placeholder: preImag)
             updateUIOnFeedMode()
         } else {
             iconImageView.kf.setImage(with: URL(string: data.imageURL))
