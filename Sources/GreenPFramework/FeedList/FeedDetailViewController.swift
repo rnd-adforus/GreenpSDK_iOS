@@ -193,7 +193,8 @@ class FeedDetailViewController : BaseViewController {
         title = UserInfo.shared.title
         guard let feed = vm.feed else { return }
         let imageURL = feed.imageURLStr.isEmpty ? feed.iconURLStr : feed.imageURLStr
-        feedImageView.kf.setImage(with: URL(string: imageURL))
+        let preImag = UIImage(named: "greenp_logo", in: Bundle.module, with: nil)
+        feedImageView.kf.setImage(with: URL(string: imageURL), placeholder: preImag)
         feedInfoView.configure(title: feed.name, content: feed.subTitle, reward: feed.reward, point: feed.pointType)
         button.setTitle("참여하고 리워드 받기", for: .normal)
         summaryTextView.text = feed.summary.replacingOccurrences(of: "\\n", with: "\n")
