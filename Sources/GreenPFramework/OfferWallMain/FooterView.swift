@@ -48,7 +48,7 @@ class FooterView : UIView {
             label.textAlignment = .right
             label.font = .nanumSquare(size: 10)
             label.textColor = .white
-            label.text = "by Adforus ver 1.0.6"
+            label.text = "by Adforus ver 1.0.8"
             return label
         }()
         

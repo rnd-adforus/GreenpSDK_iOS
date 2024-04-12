@@ -51,7 +51,7 @@ open class GreenPSettings {
     }
     
     private func showSettingsAlert() {
-        UIApplication.getMostTopViewController()?.alert(message: "리워드 적립을 위해 IDFA 정보가 필요합니다. 설정에서 광고 추적 권한을 허용해 주세요.", title: "알림", confirmTitle: "설정으로 이동", confirmHandler: { _ in
+        UIApplication.getMostTopViewController()?.alert(message: "더 개인화된 광고 제공을 위해 IDFA 정보가 필요합니다. 설정에서 광고 추적 권한을 허용해 주세요.", title: "알림", confirmTitle: "설정으로 이동", confirmHandler: { _ in
             guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                 return
             }

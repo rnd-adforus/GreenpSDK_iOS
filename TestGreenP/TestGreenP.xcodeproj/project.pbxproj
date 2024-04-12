@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,7 +16,7 @@
 		50EA23382B0DB61700182F4D /* TestGreenPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA23372B0DB61700182F4D /* TestGreenPUITestsLaunchTests.swift */; };
 		50EA23462B0DB62400182F4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA23442B0DB62400182F4D /* ViewController.swift */; };
 		50EA23472B0DB62400182F4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50EA23452B0DB62400182F4D /* Main.storyboard */; };
-		59188F6A2BB3FC1A00161269 /* GreenPFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 59188F692BB3FC1A00161269 /* GreenPFramework */; };
+		59C30D3D2BC8E5920018D3D1 /* GreenPFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 59C30D3C2BC8E5920018D3D1 /* GreenPFramework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +51,7 @@
 		50EA23442B0DB62400182F4D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		50EA23452B0DB62400182F4D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		59188F612BB3F80400161269 /* Flutter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Flutter.xcframework; path = ../Flutter.xcframework; sourceTree = "<group>"; };
+		59C30D392BC8E5870018D3D1 /* TestGreenP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TestGreenP.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59188F6A2BB3FC1A00161269 /* GreenPFramework in Frameworks */,
+				59C30D3D2BC8E5920018D3D1 /* GreenPFramework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,9 +135,15 @@
 		52B930E42B0E133900B63FFA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				59C30D392BC8E5870018D3D1 /* TestGreenP.xcodeproj */,
 				59188F612BB3F80400161269 /* Flutter.xcframework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		59C30D3A2BC8E5870018D3D1 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,7 +163,7 @@
 			);
 			name = TestGreenP;
 			packageProductDependencies = (
-				59188F692BB3FC1A00161269 /* GreenPFramework */,
+				59C30D3C2BC8E5920018D3D1 /* GreenPFramework */,
 			);
 			productName = TestGreenP;
 			productReference = 50EA23112B0DB61500182F4D /* TestGreenP.app */;
@@ -231,10 +238,16 @@
 			);
 			mainGroup = 50EA23082B0DB61500182F4D;
 			packageReferences = (
-				59188F682BB3FC1A00161269 /* XCRemoteSwiftPackageReference "GreenpSDK_iOS" */,
+				59C30D362BC8E5690018D3D1 /* XCLocalSwiftPackageReference ".." */,
 			);
 			productRefGroup = 50EA23122B0DB61500182F4D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 59C30D3A2BC8E5870018D3D1 /* Products */;
+					ProjectRef = 59C30D392BC8E5870018D3D1 /* TestGreenP.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				50EA23102B0DB61500182F4D /* TestGreenP */,
@@ -621,21 +634,16 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		59188F682BB3FC1A00161269 /* XCRemoteSwiftPackageReference "GreenpSDK_iOS" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/rnd-adforus/GreenpSDK_iOS.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.7;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		59C30D362BC8E5690018D3D1 /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		59188F692BB3FC1A00161269 /* GreenPFramework */ = {
+		59C30D3C2BC8E5920018D3D1 /* GreenPFramework */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 59188F682BB3FC1A00161269 /* XCRemoteSwiftPackageReference "GreenpSDK_iOS" */;
 			productName = GreenPFramework;
 		};
 /* End XCSwiftPackageProductDependency section */

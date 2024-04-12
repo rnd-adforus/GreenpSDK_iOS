@@ -5,17 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/Alamofire.git",
       "state" : {
-        "revision" : "723fa5a6c65812aec4a0d7cc432ee198883b6e00",
-        "version" : "5.9.0"
-      }
-    },
-    {
-      "identity" : "greenpsdk_ios",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/rnd-adforus/GreenpSDK_iOS.git",
-      "state" : {
-        "revision" : "ec7d7d764699e4646524b2f12cdd3c6bf2fa7e82",
-        "version" : "1.0.7"
+        "revision" : "f455c2975872ccd2d9c81594c658af65716e9b9a",
+        "version" : "5.9.1"
       }
     },
     {
